@@ -119,38 +119,29 @@ public class dbProvider extends ContentProvider {
     }
 	
     @Override
-    public Uri insert(Uri uri, ContentValues initialValues) {
-    	SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-    	
-    	switch (sUriMatcher.match(uri)) {
-    		case SOURCEID_CDMA:
-    		{
-    			String strSourceID = initialValues.getAsString("sourceid");
-    			
-    			String strInsert = "insert into " + strTable_CDMA + "(type, sourceid) values('CDMA', " + strSourceID +")";
-    			try 
-    	        {
-	    			db.execSQL(strInsert);
-    	        } catch (SQLException e) 
-    	        {
-    	        }
-    		}
-    		break;
-    		
-    		case SOURCEID_GSM:
-    		{
-    			String strSourceID = initialValues.getAsString("sourceid");
-    			
-    			String strInsert = "insert into " + strTable_GSM + "(type, sourceid) values('GSM', " + strSourceID +")";
-    			try 
-    	        {
-	    			db.execSQL(strInsert);
-    	        } catch (SQLException e) 
-    	        {
-    	        }
-    		}
-    		break;
-    	}
+    public Uri insert(Uri uri, ContentValues initialValues)
+	{
+		Log.e(TAG, " uri : " + uri.toString() );
+		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+
+		String strSourceID = initialValues.getAsString("sourceid");
+		String strInsert = "insert into " + strTable_Name +
+				"(packageName, permissionName, granted, create_time, update_time) " +
+				"values(" +
+				"'" + initialValues.getAsString("packageName") + "', " +
+				"'" + initialValues.getAsString("permissionName") + "', " +
+				"'" + initialValues.getAsString("granted") + "', " +
+				"'" + initialValues.getAsString("create_time") + "', " +
+				"'" + initialValues.getAsString("update_time") + "')";
+
+		Log.e(TAG, " strInsert : " + strInsert);
+
+		try
+		{
+			db.execSQL(strInsert);
+		} catch (SQLException e)
+		{
+		}
 
     	return uri;
     }

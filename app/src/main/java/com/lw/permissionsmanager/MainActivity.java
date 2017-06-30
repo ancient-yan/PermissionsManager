@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int nCmd = 2;
+        int nCmd = 3;
 
         Log.e(TAG, "nCmd : " + nCmd);
 
@@ -46,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
                 values.put("mark", "dd");
 
                 getContentResolver().update(uri, values, " item = 1 ", null);
+            }
+            break;
+
+            case 3:
+            {
+                Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider");
+
+                ContentValues values = new ContentValues();
+                values.put("packageName", "com.lw.permissionsmanager");
+                values.put("permissionName", "android.permission.READ_CONTACTS");
+                values.put("granted", "0");
+                values.put("create_time", "0");
+                values.put("update_time", "0");
+
+                getContentResolver().insert(uri, values);
             }
             break;
         }
