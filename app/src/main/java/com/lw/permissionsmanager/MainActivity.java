@@ -3,6 +3,7 @@ package com.lw.permissionsmanager;
 import android.Manifest;
 import android.content.ContentValues;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int nCmd = 3;
+        int nCmd = 4;
 
         Log.e(TAG, "nCmd : " + nCmd);
 
@@ -61,6 +62,26 @@ public class MainActivity extends AppCompatActivity {
                 values.put("update_time", "0");
 
                 getContentResolver().insert(uri, values);
+            }
+            break;
+
+            case 4:
+            {
+                Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/package_permission");
+                Cursor cursor = null;
+
+                cursor = getContentResolver().query(uri, null, "packageName = 'com.lw.permissionsmanager' and permissionName = 'android.permission.READ_CONTACTS'", null, null);
+                if(cursor == null || cursor.getCount() == 0)
+                {
+                    break;
+                }
+                if(cursor.moveToFirst() )
+                {
+                    int granted = -1;
+                    granted = cursor.getInt(cursor.getColumnIndex("granted") );
+
+                    Log.e(TAG, "granted : " + granted);
+                }
             }
             break;
         }

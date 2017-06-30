@@ -17,8 +17,13 @@ public class dbProvider extends ContentProvider {
     private static final int DATABASE_VERSION = 1;
 	private static final String strTable_Name = "permissions_manager";
 
+	private static final int PACKAGE_PERMISSION 				= 100;
+
+
     private static final String strTable_CDMA = "sourceid_unused_cdma";
     private static final String strTable_GSM = "sourceid_unused_gsm";
+
+
     
     private static final int SOURCEID_CDMA 				= 1;
     private static final int SOURCEID_GSM 				= 2;
@@ -26,7 +31,7 @@ public class dbProvider extends ContentProvider {
     private static final int SOURCEID_GSM_INDEX 		= 4;
     
     private static final UriMatcher sUriMatcher;
-    private static final String AUTHORITY = "Provider.SimContacts";
+    private static final String AUTHORITY = "com.lw.permissionsmanager.provider";
     private static final String AUTHORITY2 = "com.txtw.provider.scan.question";
 	
 	private static class DatabaseHelper extends SQLiteOpenHelper {
@@ -105,17 +110,26 @@ public class dbProvider extends ContentProvider {
 	
 	@Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
-            String sortOrder) {
-		
-		Log.e(TAG, " uri : " + uri.toString() ); 
+            String sortOrder)
+	{
+		Log.e(TAG, " uri : " + uri.toString() );
+		Log.e(TAG, " selection : " + selection);
 		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
-		
-		String strSelect = "select mark from lw_Tools where item = '1'";
-		
-		Cursor cur = db.rawQuery(strSelect, null);
-		cur.setNotificationUri(getContext().getContentResolver(), uri);
-		
-		return cur;
+
+		switch(sUriMatcher.match(uri) )
+		{
+			case PACKAGE_PERMISSION:
+			{
+				String strSelect = "select granted from " + strTable_Name + " where " + selection;
+
+				Cursor cur = db.rawQuery(strSelect, null);
+				cur.setNotificationUri(getContext().getContentResolver(), uri);
+
+				return cur;
+			}
+		}
+
+		return null;
     }
 	
     @Override
@@ -239,11 +253,12 @@ public class dbProvider extends ContentProvider {
     
     static {
     	sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+		sUriMatcher.addURI(AUTHORITY, "package_permission", PACKAGE_PERMISSION);
+
         sUriMatcher.addURI(AUTHORITY, "sourceid_cdma", SOURCEID_CDMA);
         sUriMatcher.addURI(AUTHORITY, "sourceid_gsm", SOURCEID_GSM);
         sUriMatcher.addURI(AUTHORITY, "sourceid_cdma/#", SOURCEID_CDMA_INDEX);
         sUriMatcher.addURI(AUTHORITY, "sourceid_gsm/#", SOURCEID_GSM_INDEX);
-        
         sUriMatcher.addURI(AUTHORITY2, "sourceid_gsm/#", SOURCEID_GSM_INDEX);
     }
 }
