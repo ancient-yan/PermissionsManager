@@ -41,7 +41,12 @@ public class dbProvider extends ContentProvider {
 
 			String CREATE_TABLE_PERMISSIONS_MANAGER =
 					"CREATE TABLE " + strTable_Name +
-							"(packageName STRING NOT NULL, permissionName STRING NOT NULL, granted INTEGER NOT NULL, PRIMARY KEY(packageName, permissionName) ON CONFLICT REPLACE)";
+							"(packageName STRING NOT NULL, " +
+							"permissionName STRING NOT NULL, " +
+							"granted INTEGER NOT NULL, " +
+							"create_time INTEGER NOT NULL, " +
+							"update_time INTEGER NOT NULL, " +
+							"PRIMARY KEY(packageName, permissionName) ON CONFLICT REPLACE)";
 
  	        try
 	        {
