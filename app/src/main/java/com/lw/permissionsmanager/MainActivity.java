@@ -42,11 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
             case 2:
             {
-                Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider");
+                Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/package_permission");
                 ContentValues values = new ContentValues();
-                values.put("mark", "dd");
+                values.put("granted", "1");
 
-                getContentResolver().update(uri, values, " item = 1 ", null);
+                getContentResolver().update(uri, values,
+                        "packageName = 'com.lw.permissionsmanager' and permissionName = 'android.permission.READ_CONTACTS'", null);
             }
             break;
 

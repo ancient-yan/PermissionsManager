@@ -76,38 +76,7 @@ public class dbProvider extends ContentProvider {
 
 		return true;
     }
-	
-/*	@Override
-    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
-            String sortOrder) {
-		SQLiteDatabase db = mOpenHelper.getReadableDatabase();
-		
-		switch (sUriMatcher.match(uri)) {
-			case SOURCEID_CDMA:
-			{
-				String strSelect = "select sourceid from " + strTable_CDMA + " where type = 'CDMA'";
-				
-				Cursor cur = db.rawQuery(strSelect, null);
-				cur.setNotificationUri(getContext().getContentResolver(), uri);
-				
-				return cur;
-			}
-			
-			case SOURCEID_GSM:
-			{
-				String strSelect = "select sourceid from " + strTable_GSM + " where type = 'GSM'";
-				
-				Cursor cur = db.rawQuery(strSelect, null);
-				cur.setNotificationUri(getContext().getContentResolver(), uri);
-				
-				return cur;
-			}
-		}
-		
-		return null;
-    }
-*/	
-	
+
 	@Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
             String sortOrder)
@@ -121,6 +90,8 @@ public class dbProvider extends ContentProvider {
 			case PACKAGE_PERMISSION:
 			{
 				String strSelect = "select granted from " + strTable_Name + " where " + selection;
+
+				Log.e(TAG, " strSelect : " + strSelect);
 
 				Cursor cur = db.rawQuery(strSelect, null);
 				cur.setNotificationUri(getContext().getContentResolver(), uri);
@@ -225,25 +196,31 @@ public class dbProvider extends ContentProvider {
     }
     
     @Override
-    public int update(Uri uri, ContentValues values, String where, String[] whereArgs) {
-    	
-    	final String strUpdate;
-    	
-    	strUpdate = "update lw_Tools set mark = '" + values.getAsString("mark") + "' where " + where;
-    	
-    	Log.e(TAG, " strUpdate : " + strUpdate);
-    	
-		try 
-        {
-			SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-			db.execSQL(strUpdate);
-        } catch (SQLException e) 
-        {
-        }
-		
-		getContext().getContentResolver().notifyChange(uri, null);
-    	
-    	return 0;
+    public int update(Uri uri, ContentValues values, String where, String[] whereArgs)
+	{
+		Log.e(TAG, " uri : " + uri.toString() );
+		Log.e(TAG, " where : " + where);
+		SQLiteDatabase db = mOpenHelper.getWritableDatabase();
+
+		switch(sUriMatcher.match(uri) )
+		{
+			case PACKAGE_PERMISSION:
+			{
+				final String strUpdate = "update " + strTable_Name +
+						" set granted = '" + values.getAsString("granted") +
+						"' where " + where;
+
+				Log.e(TAG, " strUpdate : " + strUpdate);
+
+				db.execSQL(strUpdate);
+
+				getContext().getContentResolver().notifyChange(uri, null);
+
+				return 0;
+			}
+		}
+
+		return -1;
     }
     
     @Override
