@@ -1,7 +1,9 @@
 package com.lw.permissionsmanager;
 
 import android.Manifest;
+import android.content.ContentValues;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int nCmd = 1;
+        int nCmd = 2;
 
         Log.e(TAG, "nCmd : " + nCmd);
 
@@ -34,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
                             MY_PERMISSIONS_REQUEST_READ_CONTACTS);
                 }else{
                 }
+            }
+            break;
+
+            case 2:
+            {
+                Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider");
+                ContentValues values = new ContentValues();
+                values.put("mark", "dd");
+
+                getContentResolver().update(uri, values, " item = 1 ", null);
             }
             break;
         }
