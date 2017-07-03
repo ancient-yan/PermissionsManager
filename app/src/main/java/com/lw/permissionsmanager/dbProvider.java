@@ -18,22 +18,11 @@ public class dbProvider extends ContentProvider {
 	private static final String strTable_Name = "permissions_manager";
 
 	private static final int PACKAGE_PERMISSION 				= 100;
+	private static final int PACKAGE_NAME      				= 101;
 
-
-    private static final String strTable_CDMA = "sourceid_unused_cdma";
-    private static final String strTable_GSM = "sourceid_unused_gsm";
-
-
-    
-    private static final int SOURCEID_CDMA 				= 1;
-    private static final int SOURCEID_GSM 				= 2;
-    private static final int SOURCEID_CDMA_INDEX 		= 3;
-    private static final int SOURCEID_GSM_INDEX 		= 4;
-    
     private static final UriMatcher sUriMatcher;
     private static final String AUTHORITY = "com.lw.permissionsmanager.provider";
-    private static final String AUTHORITY2 = "com.txtw.provider.scan.question";
-	
+
 	private static class DatabaseHelper extends SQLiteOpenHelper {
 
         DatabaseHelper(Context context) {
@@ -133,53 +122,19 @@ public class dbProvider extends ContentProvider {
     
     @Override
     public int delete(Uri uri, String where, String[] whereArgs) {
+		Log.e(TAG, " uri : " + uri.toString() );
+		Log.e(TAG, " where : " + where);
+
     	SQLiteDatabase db = mOpenHelper.getWritableDatabase();
     	
     	final String strDelete;    	
     	switch (sUriMatcher.match(uri)) {
-	    	case SOURCEID_CDMA:
+	    	case PACKAGE_NAME:
 	    	{
-	    		strDelete = "delete from " + strTable_CDMA;
-	    		try 
-    	        {
-	    			db.execSQL(strDelete);
-    	        } catch (SQLException e) 
-    	        {
-    	        }
-	    	}
-	    	break;
-	    	
-	    	case SOURCEID_GSM:
-	    	{
-	    		strDelete = "delete from " + strTable_GSM;
-	    		try 
-    	        {
-	    			db.execSQL(strDelete);
-    	        } catch (SQLException e) 
-    	        {
-    	        }
-	    	}
-	    	break;
-	    	
-	    	case SOURCEID_CDMA_INDEX:
-	    	{
-	    		final String strContactID = uri.getPathSegments().get(1);
-	    		
-	    		strDelete = "delete from " + strTable_CDMA + " where type = 'CDMA' and sourceid = " + strContactID;
-	    		try 
-    	        {
-	    			db.execSQL(strDelete);
-    	        } catch (SQLException e) 
-    	        {
-    	        }
-	    	}
-	    	break;
-	    	
-	    	case SOURCEID_GSM_INDEX:
-	    	{
-	    		final String strContactID = uri.getPathSegments().get(1);
-	    		
-	    		strDelete = "delete from " + strTable_GSM + " where type = 'GSM' and sourceid = " + strContactID;
+	    		strDelete = "delete from " + strTable_Name + " where " + where;
+
+				Log.e(TAG, " strDelete : " + strDelete);
+
 	    		try 
     	        {
 	    			db.execSQL(strDelete);
@@ -231,11 +186,6 @@ public class dbProvider extends ContentProvider {
     static {
     	sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		sUriMatcher.addURI(AUTHORITY, "package_permission", PACKAGE_PERMISSION);
-
-        sUriMatcher.addURI(AUTHORITY, "sourceid_cdma", SOURCEID_CDMA);
-        sUriMatcher.addURI(AUTHORITY, "sourceid_gsm", SOURCEID_GSM);
-        sUriMatcher.addURI(AUTHORITY, "sourceid_cdma/#", SOURCEID_CDMA_INDEX);
-        sUriMatcher.addURI(AUTHORITY, "sourceid_gsm/#", SOURCEID_GSM_INDEX);
-        sUriMatcher.addURI(AUTHORITY2, "sourceid_gsm/#", SOURCEID_GSM_INDEX);
+		sUriMatcher.addURI(AUTHORITY, "package", PACKAGE_NAME);
     }
 }

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int nCmd = 4;
+        int nCmd = 5;
 
         Log.e(TAG, "nCmd : " + nCmd);
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/package_permission");
                 ContentValues values = new ContentValues();
-                values.put("granted", "1");
+                values.put("granted", "0");
 
                 getContentResolver().update(uri, values,
                         "packageName = 'com.lw.permissionsmanager' and permissionName = 'android.permission.READ_CONTACTS'", null);
@@ -83,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.e(TAG, "granted : " + granted);
                 }
+            }
+            break;
+
+            case 5:
+            {
+                Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/package");
+
+                getContentResolver().delete(uri, " packageName = 'com.lw.permissionsmanager' ", null);
             }
             break;
         }
