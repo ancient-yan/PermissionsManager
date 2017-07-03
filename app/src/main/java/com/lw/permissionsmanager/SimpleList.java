@@ -1,10 +1,12 @@
 package com.lw.permissionsmanager;
 
 import android.app.ListActivity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,7 +50,21 @@ public class SimpleList extends ListActivity {
             for (String requestedPerm : pInfo.requestedPermissions)
             {
                 if("android.permission.INTERNET".equals(requestedPerm) )
+                {
                     Log.e(TAG, "requestedPerm : " + requestedPerm);
+                    {
+                        Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider");
+
+                        ContentValues values = new ContentValues();
+                        values.put("packageName", pInfo.packageName);
+                        values.put("permissionName", requestedPerm);
+                        values.put("granted", "0");
+                        values.put("create_time", "0");
+                        values.put("update_time", "0");
+
+                        getContentResolver().insert(uri, values);
+                    }
+                }
             }
         }
     }
