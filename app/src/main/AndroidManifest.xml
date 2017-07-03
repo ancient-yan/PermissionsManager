@@ -23,6 +23,9 @@
             android:authorities="com.lw.permissionsmanager.provider"
             />
 
+        <activity android:name=".SimpleList">
+        </activity>
+
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.lw.permissionsmanager;
 
 import android.Manifest;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int nCmd = 5;
+        int nCmd = 6;
 
         Log.e(TAG, "nCmd : " + nCmd);
 
@@ -91,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/package");
 
                 getContentResolver().delete(uri, " packageName = 'com.lw.permissionsmanager' ", null);
+            }
+            break;
+
+            case 6:
+            {
+                this.startActivity(new Intent(this, SimpleList.class) );
             }
             break;
         }
