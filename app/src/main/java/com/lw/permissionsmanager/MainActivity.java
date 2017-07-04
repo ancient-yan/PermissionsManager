@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                                 ContentValues values = new ContentValues();
                                 values.put("packageName", pInfo.packageName);
                                 values.put("permissionName", requestedPerm);
-                                values.put("granted", "0");
+                                values.put("granted", "1");
                                 values.put("create_time", "0");
                                 values.put("update_time", "0");
 

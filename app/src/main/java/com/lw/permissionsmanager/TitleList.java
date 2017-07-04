@@ -2,6 +2,8 @@ package com.lw.permissionsmanager;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,9 +22,6 @@ import java.util.Map;
 public class TitleList extends ListActivity {
     private final static String TAG = "my_log";
 
-    private String[] mListTitle = { "姓名", "性别", "年龄", "居住地","邮箱"};
-    private String[] mListStr = { "雨松MOMO", "男", "25", "北京",
-            "xuanyusong@gmail.com" };
     ListView mListView = null;
     ArrayList<Map<String,Object>> mData= new ArrayList<Map<String,Object>>();;
 
@@ -34,23 +33,49 @@ public class TitleList extends ListActivity {
 
         mListView = getListView();
 
-        int lengh = mListTitle.length;
-        for(int i =0; i < lengh; i++) {
-            Map<String,Object> item = new HashMap<String,Object>();
-            item.put("title", mListTitle[i]);
-            item.put("text", mListStr[i]);
-            mData.add(item);
+        {
+            Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/permission");
+            Cursor cursor = null;
+
+            cursor = getContentResolver().query(uri, null, " permissionName = '" + intent.getStringExtra("permission") + "' ", null, null);
+            if(cursor == null || cursor.getCount() == 0)
+            {
+                return;
+            }
+
+            String packageName = "";
+            int granted = -1;
+            boolean bRet = cursor.moveToFirst();
+            while(bRet)
+            {
+                packageName = cursor.getString(cursor.getColumnIndex("packageName") );
+                granted = cursor.getInt(cursor.getColumnIndex("granted") );
+
+                Log.e(TAG, "packageName : " + packageName);
+                Log.e(TAG, "granted : " + granted);
+
+                {
+                    Map<String,Object> item = new HashMap<String,Object>();
+                    item.put("title", packageName);
+                    item.put("text", granted);
+                    mData.add(item);
+                }
+
+                bRet = cursor.moveToNext();
+            }
         }
+
         SimpleAdapter adapter = new SimpleAdapter(this,mData,android.R.layout.simple_list_item_2,
                 new String[]{"title","text"},new int[]{android.R.id.text1,android.R.id.text2});
         setListAdapter(adapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position,
-                                    long id) {
-                Toast.makeText(TitleList.this,"您选择了标题：" + mListTitle[position] + "内容："+mListStr[position], Toast.LENGTH_LONG).show();
+                                    long id)
+            {
             }
         });
+
         super.onCreate(savedInstanceState);
     }
 

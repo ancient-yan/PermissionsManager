@@ -19,6 +19,7 @@ public class dbProvider extends ContentProvider {
 
 	private static final int PACKAGE_PERMISSION 				= 100;
 	private static final int PACKAGE_NAME      				= 101;
+	private static final int PERMISSION_NAME     				= 102;
 
     private static final UriMatcher sUriMatcher;
     private static final String AUTHORITY = "com.lw.permissionsmanager.provider";
@@ -79,6 +80,17 @@ public class dbProvider extends ContentProvider {
 			case PACKAGE_PERMISSION:
 			{
 				String strSelect = "select granted from " + strTable_Name + " where " + selection;
+
+				Log.e(TAG, " strSelect : " + strSelect);
+
+				Cursor cur = db.rawQuery(strSelect, null);
+				cur.setNotificationUri(getContext().getContentResolver(), uri);
+
+				return cur;
+			}
+			case PERMISSION_NAME:
+			{
+				String strSelect = "select packageName, granted from " + strTable_Name + " where " + selection;
 
 				Log.e(TAG, " strSelect : " + strSelect);
 
@@ -187,5 +199,6 @@ public class dbProvider extends ContentProvider {
     	sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		sUriMatcher.addURI(AUTHORITY, "package_permission", PACKAGE_PERMISSION);
 		sUriMatcher.addURI(AUTHORITY, "package", PACKAGE_NAME);
+		sUriMatcher.addURI(AUTHORITY, "permission", PERMISSION_NAME);
     }
 }
