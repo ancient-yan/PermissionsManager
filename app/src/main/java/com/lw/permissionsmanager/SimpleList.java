@@ -39,7 +39,10 @@ public class SimpleList extends ListActivity {
                                     long id) {
                 Log.e(TAG, " Item : " + mListStr[position]);
 
-                startActivity(new Intent(SimpleList.this, TitleList.class) );
+                Intent intent = new Intent(SimpleList.this, TitleList.class);
+                intent.putExtra("permission", mListStr[position]);
+
+                startActivity(intent);
             }
         });
         super.onCreate(savedInstanceState);

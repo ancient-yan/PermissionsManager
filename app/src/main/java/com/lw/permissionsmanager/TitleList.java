@@ -1,7 +1,9 @@
 package com.lw.permissionsmanager;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -17,6 +19,8 @@ import java.util.Map;
  */
 
 public class TitleList extends ListActivity {
+    private final static String TAG = "my_log";
+
     private String[] mListTitle = { "姓名", "性别", "年龄", "居住地","邮箱"};
     private String[] mListStr = { "雨松MOMO", "男", "25", "北京",
             "xuanyusong@gmail.com" };
@@ -25,6 +29,10 @@ public class TitleList extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = this.getIntent();
+
+        Log.e(TAG, " permission : " + intent.getStringExtra("permission") );
+
         mListView = getListView();
 
         int lengh = mListTitle.length;
