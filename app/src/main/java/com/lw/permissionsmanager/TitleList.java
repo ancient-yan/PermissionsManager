@@ -1,6 +1,7 @@
 package com.lw.permissionsmanager;
 
 import android.app.ListActivity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -60,8 +61,8 @@ public class TitleList extends ListActivity {
                 {
                     Map<String,Object> item = new HashMap<String,Object>();
                     item.put("rowid", rowid);
-                    item.put("title", packageName);
-                    item.put("text", granted);
+                    item.put("packageName", packageName);
+                    item.put("granted", granted);
                     mData.add(item);
                 }
 
@@ -70,7 +71,7 @@ public class TitleList extends ListActivity {
         }
 
         SimpleAdapter adapter = new SimpleAdapter(this,mData,android.R.layout.simple_list_item_2,
-                new String[]{"title","text"},new int[]{android.R.id.text1,android.R.id.text2});
+                new String[]{"packageName","granted"},new int[]{android.R.id.text1,android.R.id.text2});
         setListAdapter(adapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -80,9 +81,24 @@ public class TitleList extends ListActivity {
                 Log.e(TAG, "position : " + position);
                 Map<String,Object> item = mData.get(position);
 
-                Log.e(TAG, "title : " + item.get("title") );
-                Log.e(TAG, "text : " + item.get("text") );
+                Log.e(TAG, "packageName : " + item.get("packageName") );
+                Log.e(TAG, "granted : " + item.get("granted") );
                 Log.e(TAG, "rowid : " + item.get("rowid") );
+
+                {
+                    Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/package_permission");
+                    ContentValues values = new ContentValues();
+                    int granted = (int) item.get("granted");
+                    if(1 == granted) {
+                        values.put("granted", "0");
+                    }
+                    else {
+                        values.put("granted", "1");
+                    }
+
+                    getContentResolver().update(uri, values,
+                            " rowid = " + item.get("rowid"), null);
+                }
             }
         });
 

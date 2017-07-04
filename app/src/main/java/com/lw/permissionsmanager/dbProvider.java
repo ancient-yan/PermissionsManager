@@ -41,7 +41,7 @@ public class dbProvider extends ContentProvider {
 							"granted INTEGER NOT NULL, " +
 							"create_time INTEGER NOT NULL, " +
 							"update_time INTEGER NOT NULL, " +
-							"PRIMARY KEY(packageName, permissionName) ON CONFLICT REPLACE)";
+							"PRIMARY KEY(packageName, permissionName) ON CONFLICT IGNORE)";
 
  	        try
 	        {
