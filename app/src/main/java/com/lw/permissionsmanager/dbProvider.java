@@ -90,7 +90,7 @@ public class dbProvider extends ContentProvider {
 			}
 			case PERMISSION_NAME:
 			{
-				String strSelect = "select packageName, granted from " + strTable_Name + " where " + selection;
+				String strSelect = "select rowid, packageName, granted from " + strTable_Name + " where " + selection;
 
 				Log.e(TAG, " strSelect : " + strSelect);
 

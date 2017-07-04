@@ -45,17 +45,21 @@ public class TitleList extends ListActivity {
 
             String packageName = "";
             int granted = -1;
+            int rowid = -1;
             boolean bRet = cursor.moveToFirst();
             while(bRet)
             {
                 packageName = cursor.getString(cursor.getColumnIndex("packageName") );
                 granted = cursor.getInt(cursor.getColumnIndex("granted") );
+                rowid = cursor.getInt(cursor.getColumnIndex("rowid") );
 
+                Log.e(TAG, "rowid : " + rowid);
                 Log.e(TAG, "packageName : " + packageName);
                 Log.e(TAG, "granted : " + granted);
 
                 {
                     Map<String,Object> item = new HashMap<String,Object>();
+                    item.put("rowid", rowid);
                     item.put("title", packageName);
                     item.put("text", granted);
                     mData.add(item);
@@ -78,6 +82,7 @@ public class TitleList extends ListActivity {
 
                 Log.e(TAG, "title : " + item.get("title") );
                 Log.e(TAG, "text : " + item.get("text") );
+                Log.e(TAG, "rowid : " + item.get("rowid") );
             }
         });
 
