@@ -26,6 +26,9 @@
         <activity android:name=".SimpleList">
         </activity>
 
+        <activity android:name=".TitleList">
+        </activity>
+
     </application>
 
 </manifest>

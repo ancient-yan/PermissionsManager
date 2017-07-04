@@ -38,6 +38,8 @@ public class SimpleList extends ListActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position,
                                     long id) {
                 Log.e(TAG, " Item : " + mListStr[position]);
+
+                startActivity(new Intent(SimpleList.this, TitleList.class) );
             }
         });
         super.onCreate(savedInstanceState);
