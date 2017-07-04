@@ -27,7 +27,7 @@ public class TitleList extends ListActivity {
     ArrayList<Map<String,Object>> mData= new ArrayList<Map<String,Object>>();;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         Intent intent = this.getIntent();
 
         Log.e(TAG, " permission : " + intent.getStringExtra("permission") );
@@ -70,7 +70,7 @@ public class TitleList extends ListActivity {
             }
         }
 
-        SimpleAdapter adapter = new SimpleAdapter(this,mData,android.R.layout.simple_list_item_2,
+        final SimpleAdapter adapter = new SimpleAdapter(this,mData,android.R.layout.simple_list_item_2,
                 new String[]{"packageName","granted"},new int[]{android.R.id.text1,android.R.id.text2});
         setListAdapter(adapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -91,13 +91,21 @@ public class TitleList extends ListActivity {
                     int granted = (int) item.get("granted");
                     if(1 == granted) {
                         values.put("granted", "0");
+
+                        item.remove("granted");
+                        item.put("granted", 0);
                     }
                     else {
                         values.put("granted", "1");
+
+                        item.remove("granted");
+                        item.put("granted", 1);
                     }
 
                     getContentResolver().update(uri, values,
                             " rowid = " + item.get("rowid"), null);
+
+                    adapter.notifyDataSetChanged();
                 }
             }
         });
