@@ -3,6 +3,7 @@ package com.lw.permissionsmanager;
 import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -97,6 +98,31 @@ public class MainActivity extends AppCompatActivity {
 
             case 6:
             {
+                PackageManager packageManager = getPackageManager();
+                for (PackageInfo pInfo : packageManager.getInstalledPackages(PackageManager.GET_PERMISSIONS) )
+                {
+                    Log.e(TAG, "packageName : " + pInfo.packageName);
+                    if(null == pInfo.requestedPermissions) continue;
+                    for (String requestedPerm : pInfo.requestedPermissions)
+                    {
+                        if("android.permission.INTERNET".equals(requestedPerm) )
+                        {
+                            Log.e(TAG, "requestedPerm : " + requestedPerm);
+                            {
+                                Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider");
+
+                                ContentValues values = new ContentValues();
+                                values.put("packageName", pInfo.packageName);
+                                values.put("permissionName", requestedPerm);
+                                values.put("granted", "0");
+                                values.put("create_time", "0");
+                                values.put("update_time", "0");
+
+                                getContentResolver().insert(uri, values);
+                            }
+                        }
+                    }
+                }
                 this.startActivity(new Intent(this, SimpleList.class) );
             }
             break;
