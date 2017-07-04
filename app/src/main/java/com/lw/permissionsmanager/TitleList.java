@@ -73,6 +73,11 @@ public class TitleList extends ListActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position,
                                     long id)
             {
+                Log.e(TAG, "position : " + position);
+                Map<String,Object> item = mData.get(position);
+
+                Log.e(TAG, "title : " + item.get("title") );
+                Log.e(TAG, "text : " + item.get("text") );
             }
         });
 
