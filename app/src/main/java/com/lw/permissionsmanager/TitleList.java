@@ -3,6 +3,7 @@ package com.lw.permissionsmanager;
 import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -89,21 +90,41 @@ public class TitleList extends ListActivity {
                     Uri uri = Uri.parse("content://com.lw.permissionsmanager.provider/package_permission");
                     ContentValues values = new ContentValues();
                     int granted = (int) item.get("granted");
+
+                    boolean bGranted = true;
+
                     if(1 == granted) {
                         values.put("granted", "0");
 
                         item.remove("granted");
                         item.put("granted", 0);
+
+                        bGranted = false;
                     }
                     else {
                         values.put("granted", "1");
 
                         item.remove("granted");
                         item.put("granted", 1);
+
+                        bGranted = true;
                     }
 
                     getContentResolver().update(uri, values,
                             " rowid = " + item.get("rowid"), null);
+
+                    {
+                        PackageManager packageManager = getPackageManager();
+                        boolean bRet = false;
+
+                        Intent intent = TitleList.this.getIntent();
+
+                        Log.e(TAG, " permission : " + intent.getStringExtra("permission") );
+
+                        bRet = packageManager.LwSetPermission((String) item.get("packageName"), intent.getStringExtra("permission"), bGranted);
+
+                        Log.e(TAG,  "bRet : " + bRet);
+                    }
 
                     adapter.notifyDataSetChanged();
                 }
