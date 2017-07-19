@@ -17,6 +17,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        debug {
+            storeFile file('D:\\android6\\txtwKey_common.keystore')
+            storePassword 'www.txtws.com'
+            keyAlias 'txtw'
+            keyPassword 'www.txtws.com'
+        }
+    }
 }
 
 dependencies {
