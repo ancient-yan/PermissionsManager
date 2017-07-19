@@ -105,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
                     if(null == pInfo.requestedPermissions) continue;
                     for (String requestedPerm : pInfo.requestedPermissions)
                     {
-                        if("android.permission.INTERNET".equals(requestedPerm) )
+                        if("android.permission.INTERNET".equals(requestedPerm) ||
+                                "android.permission.DELETE_PACKAGES".equals(requestedPerm) )
                         {
                             Log.e(TAG, "requestedPerm : " + requestedPerm);
                             {

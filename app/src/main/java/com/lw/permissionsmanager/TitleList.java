@@ -42,6 +42,8 @@ public class TitleList extends ListActivity {
             cursor = getContentResolver().query(uri, null, " permissionName = '" + intent.getStringExtra("permission") + "' ", null, null);
             if(cursor == null || cursor.getCount() == 0)
             {
+                super.onCreate(savedInstanceState);
+
                 return;
             }
 
