@@ -106,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
                     for (String requestedPerm : pInfo.requestedPermissions)
                     {
                         if("android.permission.INTERNET".equals(requestedPerm) ||
-                                "android.permission.READ_EXTERNAL_STORAGE".equals(requestedPerm) )
+                                "android.permission.READ_EXTERNAL_STORAGE".equals(requestedPerm) ||
+                                "android.permission.READ_CONTACTS".equals(requestedPerm) )
                         {
                             Log.e(TAG, "requestedPerm : " + requestedPerm);
                             {
