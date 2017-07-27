@@ -16,7 +16,8 @@ import android.widget.ListView;
 public class SimpleList extends ListActivity {
     private final static String TAG = "my_log";
 
-    private String[] mListStr = {"android.permission.INTERNET", "android.permission.DELETE_PACKAGES"};
+    private String[] mListStr = {"android.permission.INTERNET",
+            "android.permission.READ_EXTERNAL_STORAGE"};
     ListView mListView = null;
 
     @Override
