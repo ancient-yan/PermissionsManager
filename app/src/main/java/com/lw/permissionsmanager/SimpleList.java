@@ -17,6 +17,7 @@ public class SimpleList extends ListActivity {
     private final static String TAG = "my_log";
 
     private String[] mListStr = {"android.permission.INTERNET",
+            "android.permission.RECEIVE_BOOT_COMPLETED",
             "android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.READ_CONTACTS"};
     ListView mListView = null;
