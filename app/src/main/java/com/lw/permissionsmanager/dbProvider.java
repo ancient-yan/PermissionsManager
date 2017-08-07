@@ -60,7 +60,7 @@ public class dbProvider extends ContentProvider {
 
 	@Override
     public boolean onCreate() {
-		Log.e(TAG, "onCreate");
+		Log.e(TAG, "dbProvider -> onCreate");
 		
 		mOpenHelper = new DatabaseHelper(getContext() );
 

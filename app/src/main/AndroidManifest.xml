@@ -21,7 +21,7 @@
 
         <provider android:name="dbProvider"
             android:exported="true"
-            android:authorities="com.lw.permissionsmanager.provider"
+            android:authorities="com.lw.permissionsmanager.provider_DELL"
             />
 
         <activity android:name=".SimpleList">
