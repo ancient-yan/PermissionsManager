@@ -16,5 +16,9 @@ public class MyReceiver extends BroadcastReceiver {
 		  {
 			  Log.e(TAG, "MyReceiver -> ACTION_BOOT_COMPLETED");
 		  }
+		  else if(intent.getAction().equals("android.intent.action.LOCKED_BOOT_COMPLETED") )
+		  {
+			  Log.e(TAG, "MyReceiver -> ACTION_LOCKED_BOOT_COMPLETED");
+		  }
 	  }
 }
