@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/sel_selectable_item_white_bg"
+    android:clickable="true"
+    android:paddingEnd="@dimen/common_edge"
+    android:paddingStart="@dimen/common_edge"
+    tools:ignore="KeyboardInaccessibleWidget">
+
+    <TextView
+        android:id="@+id/tvWidgetAvatarItemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="消息通知"/>
+
+    <ImageView
+        android:id="@+id/ivWidgetAvatarItemArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_arrow_right"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivWidgetItemAvatar"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginTop="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ivWidgetAvatarItemArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/img_head_other_38"/>
+
+</android.support.constraint.ConstraintLayout>

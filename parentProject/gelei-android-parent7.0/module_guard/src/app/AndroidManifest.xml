@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.gwchina.lssw.parent.guard"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name="com.gwchina.parent.guard.GuardAppContext"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="守护模块"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:replace="android:theme,android:label,android:allowBackup">
+
+        <!--守护调试界面-->
+        <activity
+            android:name="com.gwchina.parent.guard.GuardDebugActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!--调试工具-->
+        <activity
+            android:name="com.gwchina.sdk.debug.DebugActivity"
+            android:label="调试工具"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
+        <!--时间守护-->
+        <activity
+            android:name="com.gwchina.parent.times.TimeGuardActivity"
+            android:screenOrientation="unspecified"/>
+
+        <!--应用守护-->
+        <activity
+            android:name="com.gwchina.parent.apps.AppGuardActivity"
+            android:screenOrientation="unspecified"/>
+
+        <!--网址守护-->
+        <activity
+            android:name="com.gwchina.parent.net.NetGuardActivity"
+            android:screenOrientation="unspecified"
+            android:launchMode="singleTop"
+            android:theme="@style/NetGuardTheme"/>
+
+        <!--亲情号码-->
+        <activity
+            android:name="com.gwchina.parent.family.FamilyPhoneActivity"
+            android:screenOrientation="unspecified" />
+
+        <!--守护等级-->
+        <activity
+            android:name="com.gwchina.parent.level.GuardLevelActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified"/>
+
+        <!--监督模式-->
+        <activity
+            android:name="com.gwchina.parent.supervise.IOSSuperviseModeActivity"
+            android:screenOrientation="unspecified"/>
+
+        <!--绑定设备-->
+        <activity android:name="com.gwchina.parent.binding.BindingActivity"/>
+
+        <!--数据迁移-->
+        <activity android:name="com.gwchina.parent.migration.MigrationActivity"/>
+
+    </application>
+
+</manifest>

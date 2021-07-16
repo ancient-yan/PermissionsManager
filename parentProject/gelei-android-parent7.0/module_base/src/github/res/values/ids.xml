@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--BottomBar-->
+    <item name="bb_bottom_bar_color_id" type="id"/>
+    <item name="bb_bottom_bar_appearance_id" type="id"/>
+
+    <!--LabelsView-->
+    <item name="tag_key_data" type="id"/>
+    <item name="tag_key_position" type="id"/>
+
+</resources>

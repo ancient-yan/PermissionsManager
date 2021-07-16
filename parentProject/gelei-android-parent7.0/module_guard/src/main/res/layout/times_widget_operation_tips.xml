@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/tvTimesWidgetTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/icon_close_white"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_small"
+        app:stv_corner="3dp"
+        app:stv_solid="@color/green_main"
+        tools:text="点击可设置精确时间或删除时段"/>
+
+    <com.gwchina.sdk.base.widget.shape.TriangleView
+        android:layout_width="10dp"
+        android:layout_height="6dp"
+        android:layout_marginStart="10dp"
+        app:tv_triangle_direction="down"
+        app:tv_triangle_solid_color="@color/green_main"/>
+
+</merge>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/net_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/net_guard" />
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/net_cl_internet_manage"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/net_cl_guard_switch">
+
+
+                <ImageView
+                    android:id="@+id/net_iv_internet_manage_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/common_edge"
+                    android:src="@drawable/net_icon_guard"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/net_tv_internet_manage_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/open_guard_net_play"
+                    android:textColor="@color/gray_level1"
+                    android:textSize="@dimen/text_big"
+                    app:layout_constraintBottom_toTopOf="@id/net_tv_internet_manage_subtitle"
+                    app:layout_constraintStart_toEndOf="@id/net_iv_internet_manage_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+
+                <TextView
+                    android:id="@+id/net_tv_internet_manage_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="@string/for_the_health_children"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/net_tv_internet_manage_title"
+                    app:layout_constraintTop_toBottomOf="@id/net_tv_internet_manage_title" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/sbOpenNetGuard"
+                    style="@style/Style_SwitchBtn"
+                    android:layout_width="46dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/net_img_guide" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/information_hybrid"
+                android:textColor="@color/gray_level1"
+                android:textSize="@dimen/text_x_big"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/open_guard_net_play_intercept"
+                android:textColor="@color/gray_level2"
+                android:textSize="@dimen/text_normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/shape_gray_solid_round_5"
+                android:drawableStart="@drawable/icon_warning_red"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="8dp"
+                android:text="@string/android_phone_use_green_net"
+                android:textColor="@color/gray_level2"
+                android:textSize="@dimen/text_small" />
+        </LinearLayout>
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+</LinearLayout>

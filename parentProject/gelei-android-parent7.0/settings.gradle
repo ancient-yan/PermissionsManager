@@ -1,0 +1,21 @@
+//通用类库
+def libs = ["lib_base", "lib_cache", "lib_media_selector", "lib_qrcode", "lib_network", "lib_push", "lib_social"]
+libs.forEach {
+    include(":$it")
+    project(":$it").projectDir = new File("../Gw-Libs/$it")
+}
+
+//业务基础架构
+include ':module_base'
+
+//业务模块
+include ':module_account'
+include ':module_home'
+include ':module_guard'
+include ':module_user'
+
+//app壳
+include ':app'
+
+//插件
+//include ':buildSrc'

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gwTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_menu_id="@menu/daily_menu_right"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/main_tab_grow_diary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gwTitleLayout"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color"
+        app:srl_target_id="@+id/recyclerView">
+
+        <com.android.base.widget.SimpleMultiStateView
+            style="@style/SimpleMultiStateView_Default"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_separate" />
+
+            <include layout="@layout/daily_stream_empty_layout" />
+
+        </com.android.base.widget.SimpleMultiStateView>
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+
+
+    <ImageView
+        android:id="@+id/publishDaily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/daily_icon_publish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <com.gwchina.parent.daily.widget.ReplyView
+        android:id="@+id/replyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

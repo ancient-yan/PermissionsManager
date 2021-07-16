@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg">
+
+    <View
+        android:id="@+id/headBg"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@drawable/bg_beijing_hzxx"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.gwchina.sdk.base.widget.insets.StatusInsetsView
+        android:id="@+id/insetsChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlChildInfoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_title="@string/child_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/insetsChild"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivChildAvatar"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="20dp"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gtlChildInfoTitle"
+        tools:src="@drawable/img_head_boy_50" />
+
+    <TextView
+        android:id="@+id/tvChildName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_big"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/ivChildAvatar"
+        app:layout_constraintTop_toTopOf="@id/ivChildAvatar"
+        tools:text="名字可以很长" />
+
+    <TextView
+        android:id="@+id/tvChildAppointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_small"
+        android:text="@string/child_appointment_tip"
+        app:layout_constraintLeft_toRightOf="@id/ivChildAvatar"
+        app:layout_constraintTop_toBottomOf="@id/tvChildName" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/svHomeScrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivChildAvatar">
+
+        <LinearLayout
+            android:id="@+id/llChildContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_edge"
+            android:layout_marginEnd="@dimen/common_edge"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvChildDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_white_solid_round10"
+                android:nestedScrollingEnabled="false"
+                tools:ignore="UnusedAttribute"
+                android:visibility="visible"/>
+
+            <FrameLayout
+                android:id="@+id/flChildNoDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_white_solid_round10"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:visibility="visible">
+                <TextView
+                    android:id="@+id/tvChildNoDevice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/icon_bangding_wode"
+                    android:textColor="@color/gray_level2"
+                    android:textSize="@dimen/text_normal"
+                    tools:text="宝贝名下未绑定手机，点击可绑定"/>
+            </FrameLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvChildInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/shape_white_solid_round10"
+                android:nestedScrollingEnabled="false"
+                tools:ignore="UnusedAttribute" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

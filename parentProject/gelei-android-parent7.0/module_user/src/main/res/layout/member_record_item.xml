@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="23dp">
+
+    <TextView
+        android:id="@+id/tvMemberRecordPlanName"
+        style="@style/MemberCenter_Style_Text_Big"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordCreateTimeText"
+        style="@style/MemberCenter_Style_Text_Small"
+        android:layout_marginTop="17dp"
+        android:text="@string/user_member_order_create_time"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMemberRecordPlanName" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordCreateTimeValue"
+        style="@style/MemberCenter_Style_Text_Small"
+        android:textColor="@color/gray_level1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMemberRecordCreateTimeText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMemberRecordCreateTimeText" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordPayTypeText"
+        style="@style/MemberCenter_Style_Text_Small"
+        android:layout_marginTop="17dp"
+        android:text="@string/user_member_order_pay_type"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMemberRecordCreateTimeText" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordPayTypeValue"
+        style="@style/MemberCenter_Style_Text_Small"
+        android:textColor="@color/gray_level1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMemberRecordPayTypeText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMemberRecordPayTypeText" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordOrderNoText"
+        style="@style/MemberCenter_Style_Text_Small"
+        android:layout_marginTop="17dp"
+        android:text="@string/user_member_order_no"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMemberRecordPayTypeText" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordOrderNoValue"
+        style="@style/MemberCenter_Style_Text_Small"
+        android:textColor="@color/gray_level1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMemberRecordOrderNoText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMemberRecordOrderNoText" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordCostText"
+        style="@style/MemberCenter_Style_Text_Small"
+        android:layout_marginTop="17dp"
+        android:text="@string/user_member_order_cost"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMemberRecordOrderNoText" />
+
+    <TextView
+        android:id="@+id/tvMemberRecordCostValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_big"
+        android:textColor="@color/green_level1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMemberRecordCostText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMemberRecordCostText" />
+</android.support.constraint.ConstraintLayout>

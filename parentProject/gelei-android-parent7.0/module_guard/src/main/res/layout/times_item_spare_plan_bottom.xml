@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingEnd="@dimen/common_edge"
+    android:paddingStart="@dimen/common_edge">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:background="@color/gray_cutting_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvTimesItemLeftBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1px"
+        android:background="?selectableItemBackground"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/vTimesItemBtnLine"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="编辑"/>
+
+    <View
+        android:id="@+id/vTimesItemBtnLine"
+        android:layout_width="1px"
+        android:layout_height="0dp"
+        android:background="@color/gray_cutting_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tvTimesItemLeftBtn"
+        app:layout_constraintRight_toLeftOf="@id/tvTimesItemRightBtn"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvTimesItemRightBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1px"
+        android:background="?selectableItemBackground"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:textColor="@color/green_main"
+        app:layout_constraintLeft_toRightOf="@id/vTimesItemBtnLine"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="启用"/>
+
+    <android.support.constraint.Group
+        android:id="@+id/groupTimesItemRightSide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="vTimesItemBtnLine,tvTimesItemRightBtn"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/gray_separate"
+        app:layout_constraintTop_toBottomOf="@id/tvTimesItemLeftBtn"/>
+
+</android.support.constraint.ConstraintLayout>

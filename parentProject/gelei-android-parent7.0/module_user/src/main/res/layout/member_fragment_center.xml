@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llHomeAppUsedTime"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.gwchina.sdk.base.widget.GwTitleLayout
+            android:id="@+id/gtlMemberTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/memberCenterColorPrimary"
+            app:gtl_menu_id="@menu/member_center_menu"
+            app:gtl_show_cutting_line="false"
+            app:gtl_title="@string/vip_centre" />
+
+        <TextView
+            android:id="@+id/tvBuyRecord"
+            android:layout_width="wrap_content"
+            android:text="@string/user_member_buy_record"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical|right"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color">
+
+        <com.android.base.widget.SimpleMultiStateView style="@style/SimpleMultiStateView_Default">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/memberRvContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        </com.android.base.widget.SimpleMultiStateView>
+
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/llMemberOpen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="27dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnMemberOpen"
+            style="@style/Style_Round_Green_Btn_Big_Longest"
+            android:text="@string/open_member" />
+
+    </LinearLayout>
+
+</LinearLayout>

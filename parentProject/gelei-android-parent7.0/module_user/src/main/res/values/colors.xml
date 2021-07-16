@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="memberCenterColorPrimary">#1C202A</color>
+    <color name="text_color_02">#FF6C6C6C</color>
+    <color name="color_text_02">#ff181c20</color>
+    <color name="color_text_03">#ffb1b7be</color>
+    <color name="member_border_color">#ECC78A</color>
+    <color name="opacity_10_member_border_color">#1AECC78A</color>
+    <color name="member_price_color">#855627</color>
+    <color name="member_indicator_selected_color">#EDC88C</color>
+</resources>

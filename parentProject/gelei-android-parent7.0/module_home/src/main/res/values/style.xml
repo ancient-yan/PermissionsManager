@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="AppTheme.Launcher" parent="AppTheme.FullScreen">
+        <item name="android:windowBackground">@drawable/launcher_bg</item>
+    </style>
+
+    <style name="SimpleMultiStateView_Weekly_List" parent="SimpleMultiStateView_Default">
+        <item name="msv_emptyText">@string/no_weekly</item>
+    </style>
+
+</resources>

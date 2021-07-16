@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlEnterNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="false"
+        app:gtl_title="@string/modify_group_name"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <com.gwchina.sdk.base.widget.text.ClearableEditTextLayout
+        android:id="@+id/cetEnterNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:background="@drawable/shape_gray_solid_round_5">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="start"
+            android:hint="@string/group_name_input_hint"
+            android:inputType="text"
+            android:maxLength="@integer/nickname_length"
+            android:paddingBottom="15dp"
+            android:paddingEnd="@dimen/common_edge"
+            android:paddingStart="@dimen/common_edge"
+            android:paddingTop="15dp"
+            android:singleLine="true"
+            android:textColor="@color/gray_level1"
+            android:textColorHint="@color/gray_level3"
+            android:textSize="16sp"
+            tools:ignore="Autofill"/>
+
+    </com.gwchina.sdk.base.widget.text.ClearableEditTextLayout>
+
+</LinearLayout>

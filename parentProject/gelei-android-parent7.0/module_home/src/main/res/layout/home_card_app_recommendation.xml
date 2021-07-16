@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <TextView
+        android:id="@+id/ivHomeAppRecoDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="8dp"
+        android:drawableEnd="@drawable/icon_more_gray"
+        android:drawablePadding="7dp"
+        android:gravity="center"
+        android:text="@string/home_card_app_recommendation_desc"
+        android:textColor="@color/gray_level3"
+        android:textSize="@dimen/text_normal"
+        android:visibility="gone"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clHomeAppRecoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvHomeAppRecoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_selection"
+            android:textColor="@color/gray_level1"
+            android:textSize="@dimen/text_x_big"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvHomeAppRecoGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/gray_level2"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintLeft_toLeftOf="@id/tvHomeAppRecoTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvHomeAppRecoTitle"
+            tools:text="适合三年级的学习应用，快来get学霸同款！"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_more"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvHomeAppReco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="30dp"
+        android:nestedScrollingEnabled="false"
+        android:orientation="vertical"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        tools:ignore="UnusedAttribute"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/gray_separate"/>
+
+</merge>

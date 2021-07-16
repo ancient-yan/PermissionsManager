@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llPurchase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlMemberTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="false"
+        app:gtl_title="@string/user_member_purchase_title" />
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color">
+
+        <com.android.base.widget.SimpleMultiStateView style="@style/SimpleMultiStateView_Default">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvPurchaseList"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+
+                <Button
+                    android:id="@+id/btnMemberPay"
+                    android:visibility="invisible"
+                    style="@style/Style_Round_Green_Btn_Big_Longest" />
+
+                <TextView
+                    android:id="@+id/tvMemberAgreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:visibility="invisible"
+                    android:text="如开通会员，则代表你同意《会员服务》"
+                    android:textColor="@color/gray_level3"
+                    android:textSize="@dimen/text_small" />
+            </LinearLayout>
+        </com.android.base.widget.SimpleMultiStateView>
+
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+
+</LinearLayout>

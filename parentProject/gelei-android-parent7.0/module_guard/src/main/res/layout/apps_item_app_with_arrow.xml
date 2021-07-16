@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/clAppsItemWithArrowContent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    tools:ignore="ResourceName">
+
+    <ImageView
+        android:id="@+id/ivAppsItemWithArrowAppIcon"
+        android:layout_width="@dimen/guard_app_icon_size"
+        android:layout_height="@dimen/guard_app_icon_size"
+        android:layout_marginStart="@dimen/common_edge"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemWithArrowDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:drawableEnd="@drawable/icon_arrow_right"
+        android:drawablePadding="6dp"
+        android:gravity="center"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemWithArrowAppName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginStart="6dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toRightOf="@id/ivAppsItemWithArrowAppIcon"
+        app:layout_constraintRight_toLeftOf="@id/tvAppsItemWithArrowDesc"
+        app:layout_constraintTop_toTopOf="@id/ivAppsItemWithArrowAppIcon"
+        tools:text="格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端格雷-孩子端"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemWithArrowCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toBottomOf="@id/ivAppsItemWithArrowAppIcon"
+        app:layout_constraintLeft_toLeftOf="@id/tvAppsItemWithArrowAppName"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="教育"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:opacity="opaque"
+    tools:ignore="ResourceName">
+
+    <item android:drawable="@color/white"/>
+
+    <item
+        android:gravity="bottom|center_horizontal">
+
+        <bitmap
+            android:gravity="bottom|center_horizontal"
+            android:src="@drawable/launcher_img_content"/>
+
+    </item>
+
+</layer-list>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_solid_round10"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <TextView
+        android:id="@+id/tvDialogTips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_edge"
+        android:layout_marginRight="@dimen/common_edge"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:lineSpacingMultiplier="1.1"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_x_big"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/dialog_verity_code"/>
+
+    <com.gwchina.sdk.base.widget.text.ClearableEditTextLayout
+        android:id="@+id/cetDialogEnterSmsCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge_big"
+        android:layout_marginStart="@dimen/common_edge_big"
+        android:layout_marginTop="15dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/input_verify_code"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="@integer/validate_code_length"
+            android:singleLine="true"
+            android:textColor="@color/gray_level1"
+            android:textColorHint="@color/gray_level3"
+            android:textSize="@dimen/text_xx_big"
+            tools:ignore="UnusedAttribute"/>
+
+    </com.gwchina.sdk.base.widget.text.ClearableEditTextLayout>
+
+    <TextView
+        android:id="@+id/tvUnbindTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/red_level1"
+        android:textSize="12sp"/>
+
+    <com.gwchina.sdk.base.widget.dialog.DialogBottomLayout
+        android:id="@+id/dblUnbindLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llHomeAppApprovalAbbreviation"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/home_sel_approval_item_bg"
+    android:orientation="horizontal"
+    android:paddingBottom="20dp"
+    android:paddingEnd="5dp"
+    android:paddingStart="10dp"
+    android:paddingTop="20dp"
+    tools:ignore="ContentDescription">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/tvHomeAppIcon1"
+        android:layout_width="@dimen/home_app_icon_size"
+        android:layout_height="@dimen/home_app_icon_size"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="@dimen/home_app_icon_round"/>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/tvHomeAppIcon2"
+        android:layout_width="@dimen/home_app_icon_size"
+        android:layout_height="@dimen/home_app_icon_size"
+        android:layout_marginStart="10dp"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="@dimen/home_app_icon_round"/>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/tvHomeAppIcon3"
+        android:layout_width="@dimen/home_app_icon_size"
+        android:layout_height="@dimen/home_app_icon_size"
+        android:layout_marginStart="10dp"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="@dimen/home_app_icon_round"/>
+
+    <TextView
+        android:id="@+id/tvHomeMoreAppTips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="3dp"
+        android:drawableEnd="@drawable/icon_more"
+        android:drawablePadding="3dp"
+        android:ellipsize="start"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"/>
+
+</LinearLayout>

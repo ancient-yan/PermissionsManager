@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llPurchaseRecord"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlMemberTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="false"
+        app:gtl_title="@string/user_member_purchase_record_title" />
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color">
+
+        <com.android.base.widget.SimpleMultiStateView style="@style/SimpleMultiStateView_Member_Record"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvRecordList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        </com.android.base.widget.SimpleMultiStateView>
+
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+</LinearLayout>

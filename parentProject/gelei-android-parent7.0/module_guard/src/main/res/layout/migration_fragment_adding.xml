@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <com.gwchina.sdk.base.widget.insets.StatusInsetsView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/submit_successfully"
+        android:textSize="@dimen/text_normal"
+        android:textColor="@color/gray_level2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:drawablePadding="10dp"
+        android:drawableStart="@drawable/icon_status_normal"
+        android:layout_marginTop="20dp" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="30dp"
+        android:fillViewport="true"
+        tools:ignore="UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvMigrationChild"
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                tools:ignore="UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/tvMigrationContinue"
+                android:text="@string/continue_to_add_child"
+                android:layout_marginTop="20dp"
+                android:textSize="@dimen/text_normal"
+                android:textColor="@color/green_level1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnMigrationNextStep"
+        style="@style/Style_Round_Green_Btn_Big_Longest"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/next_step" />
+
+</LinearLayout>

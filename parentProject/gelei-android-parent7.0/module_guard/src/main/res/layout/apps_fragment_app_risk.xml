@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.base.widget.ScrollChildSwipeRefreshLayout android:id="@+id/base_refresh_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srl_color_scheme="@array/gw_swipe_refresh_color"
+    app:srl_target_id="@+id/rvAppsRiskList">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvAppsRiskList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</com.android.base.widget.ScrollChildSwipeRefreshLayout>
+

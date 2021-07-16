@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/svMineContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <com.gwchina.sdk.base.widget.insets.StatusInsetsView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/clMineTitleContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_page_title_bg">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivMineAvatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginStart="@dimen/common_edge"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/img_default_avatar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/tvMineParentHeaderRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/common_edge"
+                    android:src="@drawable/icon_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="@id/ivMineAvatar"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivMineAvatar"
+                    tools:ignore="ContentDescription"/>
+
+                <TextView
+                    android:id="@+id/tvMineParentName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/common_edge"
+                    android:layout_marginStart="15dp"
+                    android:drawablePadding="5dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/login_register"
+                    android:textColor="@color/gray_level1"
+                    android:textSize="@dimen/text_xx_big"
+                    android:textStyle="bold"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintLeft_toRightOf="@id/ivMineAvatar"
+                    app:layout_constraintRight_toLeftOf="@id/tvMineParentHeaderRight"
+                    app:layout_constraintTop_toTopOf="@id/ivMineAvatar"
+                    app:layout_constraintBottom_toBottomOf="@id/ivMineAvatar"
+                    tools:drawableRight="@drawable/mine_icon_vip"
+                    tools:text="超长的名字超长的名字超长的名字超长的名字超长的名字"/>
+
+                <ViewStub
+                    android:id="@+id/mineStubAddTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout="@layout/main_mine_stub_add_dev_tips"
+                    android:layout_marginEnd="@dimen/common_edge"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <ViewStub
+                android:id="@+id/mineStubLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout="@layout/main_mine_stub_logout"/>
+
+            <ViewStub
+                android:id="@+id/mineStubLogined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/main_mine_stub_logined"/>
+
+            <LinearLayout
+                android:id="@+id/llMineVipItem"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:layout_marginStart="@dimen/common_edge"
+                android:background="@drawable/mine_bg_vip_round_10">
+
+                <TextView
+                    android:id="@+id/tvMineVipDiscount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="15dp"
+                    android:drawableStart="@drawable/mine_icon_item_vip"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/gold_level1"
+                    android:textSize="16sp"
+                    android:text="@string/member_discount"/>
+
+                <TextView
+                    android:id="@+id/tvMineVipTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:gravity="center"
+                    android:textColor="@color/gold_level1"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_mine_entry_vip"
+                    android:layout_marginEnd="15dp"
+                    tools:ignore="ContentDescription"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvMineEntrances"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:nestedScrollingEnabled="false"
+                tools:ignore="UnusedAttribute"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/llMineTitleWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.gwchina.sdk.base.widget.insets.StatusInsetsView
+            android:id="@+id/insetMine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:id="@+id/flMineTitleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="?actionBarSize">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/main_tab_mine"
+                android:textColor="@color/gray_level1"
+                android:textSize="@dimen/text_big"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="bottom"
+                android:background="@color/gray_cutting_line"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

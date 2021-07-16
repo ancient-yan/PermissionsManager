@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvLevelUnSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="6dp"
+        android:drawableTop="@drawable/level_icon_mild_default"
+        android:gravity="center"
+        android:text="@string/mild"
+        android:textColor="@color/level_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/ivLevelSelected"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/level_icon_mild_selected"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:visibility="gone"/>
+
+    <com.gwchina.sdk.base.widget.shape.TriangleView
+        android:id="@+id/levelIvTriangle"
+        android:layout_width="18dp"
+        android:layout_height="11dp"
+        android:layout_marginTop="25dp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="@id/ivLevelSelected"
+        app:layout_constraintRight_toRightOf="@id/ivLevelSelected"
+        app:layout_constraintTop_toBottomOf="@id/ivLevelSelected"
+        app:tv_triangle_direction="top"
+        app:tv_triangle_solid_color="@color/gray_separate"
+        tools:ignore="ContentDescription"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/tvLevelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/mild"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_xx_big"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/ivLevelSelected"
+        app:layout_constraintTop_toTopOf="@id/ivLevelSelected"/>
+
+    <TextView
+        android:id="@+id/tvLevelDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivLevelSelected"
+        app:layout_constraintLeft_toRightOf="@id/ivLevelSelected"/>
+
+    <ImageView
+        android:id="@+id/ivRecommendUnSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/level_img_recommend"
+        app:layout_constraintLeft_toLeftOf="@id/tvLevelUnSelect"
+        app:layout_constraintTop_toTopOf="@id/tvLevelUnSelect"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:id="@+id/ivRecommendSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/level_img_recommend"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@id/ivLevelSelected"
+        app:layout_constraintTop_toTopOf="@id/ivLevelSelected"
+        tools:ignore="ContentDescription"/>
+
+</android.support.constraint.ConstraintLayout>

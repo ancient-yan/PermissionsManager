@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false">
+
+    <ImageView
+        android:id="@+id/ivMemberItemIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/member_icon_pay_success"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvCustomMachine"
+        android:layout_width="40dp"
+        android:layout_height="15dp"
+        app:layout_constraintStart_toStartOf="@id/ivMemberItemIcon"
+        app:layout_constraintEnd_toEndOf="@id/ivMemberItemIcon"
+        app:layout_constraintBottom_toTopOf="@id/tvMemberItemName"
+        android:layout_marginBottom="4dp"
+        android:text="定制机"
+        android:textColor="@color/white"
+        android:textSize="9sp"
+        android:gravity="center"
+        android:background="@drawable/member_custom_machine" />
+
+    <ImageView
+        android:id="@+id/ivDeveloping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/member_privilege_developing"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintLeft_toLeftOf="@id/ivMemberItemIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvMemberItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivMemberItemIcon" />
+
+    <TextView
+        android:id="@+id/tvMemberItemDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_smaller"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMemberItemName" />
+
+</android.support.constraint.ConstraintLayout>

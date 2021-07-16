@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gwTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/delivery_address" />
+
+
+    <com.android.base.widget.SimpleMultiStateView
+        style="@style/SimpleMultiStateView_Default"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/profile_fragment_patriarch_address_layout" />
+
+    </com.android.base.widget.SimpleMultiStateView>
+
+</LinearLayout>

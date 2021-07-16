@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clMemberIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:id="@+id/llVip"
+            android:layout_width="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/llSVip"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvVip"
+                android:layout_width="wrap_content"
+                android:text="@string/member_vip"
+                android:textSize="16sp"
+                android:textColor="@color/gray_level2"
+                android:drawableStart="@drawable/member_icon_vip"
+                android:drawablePadding="10dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSVip"
+            android:layout_width="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/llVip"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvSVip"
+                android:layout_width="wrap_content"
+                android:text="@string/member_svip"
+                android:textSize="16sp"
+                android:textColor="@color/gray_level2"
+                android:drawableStart="@drawable/member_icon_svip"
+                android:drawablePadding="10dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/vipIndicator"
+            android:layout_width="0dp"
+            android:background="@color/member_indicator_selected_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/llVip"
+            app:layout_constraintRight_toLeftOf="@id/svipIndicator"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_height="3dp" />
+
+        <View
+            android:id="@+id/svipIndicator"
+            android:layout_width="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/vipIndicator"
+            app:layout_constraintBottom_toBottomOf="@id/llVip"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_height="3dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <com.gwchina.parent.member.widget.GoodsLinearLayout
+            android:id="@+id/goodsLinearLayout"
+            android:paddingStart="16dp"
+            android:paddingEnd="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btnMemberPay"
+        android:layout_marginTop="27dp"
+        style="@style/Style_Round_Yellow_Btn_Big_Longest" />
+
+    <TextView
+        android:id="@+id/tvMemberAgreement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        tools:text="如开通，则代表你同意《会员服务协议》"
+        android:textColor="@color/gray_level3"
+        android:textSize="@dimen/text_small" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="68dp"
+            android:background="@color/gray_level4"
+            android:layout_height="0.5dp" />
+
+        <TextView
+            android:id="@+id/tvVipTips"
+            android:layout_width="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/gray_level2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            tools:text="会员尊享特权"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="68dp"
+            android:background="@color/gray_level4"
+            android:layout_height="0.5dp" />
+    </LinearLayout>
+
+</LinearLayout>

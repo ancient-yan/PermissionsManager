@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.android.base.widget.SimpleMultiStateView
+        style="@style/SimpleMultiStateView_Default"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvFamilyGuardList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.android.base.widget.SimpleMultiStateView>
+
+    <Button
+        android:id="@+id/btnMemberOpen"
+        style="@style/Style_Round_Green_Btn_Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="@string/open_vip_to_experience"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"/>
+
+</android.support.constraint.ConstraintLayout>

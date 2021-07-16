@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackgroundBorderless"
+    android:paddingEnd="3dp"
+    android:paddingStart="3dp">
+
+    <TextView
+        android:id="@+id/tvBaseWidgetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="有消息" />
+
+    <View
+        android:id="@+id/viewBaseWidgetRedDot"
+        android:layout_width="@dimen/notification_dot"
+        android:layout_height="@dimen/notification_dot"
+        android:background="@drawable/shape_red_dot_notification"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@id/tvBaseWidgetText"
+        app:layout_constraintTop_toTopOf="@id/tvBaseWidgetText" />
+
+</android.support.constraint.ConstraintLayout>

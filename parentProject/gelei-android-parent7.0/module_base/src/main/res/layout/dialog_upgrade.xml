@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_solid_round10"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_bg_upgrade">
+
+        <TextView
+            android:id="@+id/tvDialogUpgradeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="26dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_x_big"
+            android:textStyle="bold"
+            tools:text="有新版本更新哦"/>
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvDialogUpgradeContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/text_line_space"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="@color/gray_level2"
+            android:textSize="@dimen/text_normal"
+            tools:text="新版本更新：
+            1：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            2：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            3：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            4：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            5：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            6：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            7：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+            8：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvDialogUpgradeConfirm"
+        style="@style/Style_Round_Green_Btn_Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/check_version_immediately"/>
+
+    <TextView
+        android:id="@+id/tvDialogUpgradeCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="18dp"
+        android:background="?selectableItemBackground"
+        android:text="@string/check_version_ignore"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_normal"/>
+
+</LinearLayout>

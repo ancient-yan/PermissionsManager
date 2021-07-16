@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:layout_height="match_parent">
+
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlFamilyAddEditBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvFamilytitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/gray_level1"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gtlFamilyAddEditBack"
+        tools:text="添加亲情号码" />
+
+
+    <RelativeLayout
+        android:id="@+id/rlFamilyName"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvFamilytitle"
+        app:layout_constraintTop_toBottomOf="@id/tvFamilytitle">
+
+        <TextView
+            android:id="@+id/tvFmailyNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@string/name"
+            android:textColor="@color/gray_level1"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/etFamilyName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="47dp"
+            android:layout_toEndOf="@id/tvFmailyNameTitle"
+            android:background="@color/white"
+            android:hint="@string/add_family_phone_name_hint"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColor="@color/gray_level1"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="王大锤" />
+
+        <ImageView
+            android:id="@+id/ivNameClear"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@id/etFamilyName"
+            android:layout_alignBottom="@id/etFamilyName"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_clear"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignStart="@id/etFamilyName"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray_cutting_line" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlFamilyPhoneNum"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/rlFamilyName"
+        app:layout_constraintTop_toBottomOf="@id/rlFamilyName">
+
+        <TextView
+            android:id="@+id/tvFmailyPhoneTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@string/phone_number"
+            android:textColor="@color/gray_level1"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/etFamilyPhone"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/tvFmailyPhoneTitle"
+            android:background="@color/white"
+            android:hint="@string/add_family_phone_number_hint"
+            android:inputType="number"
+            android:maxLength="15"
+            android:textColor="@color/gray_level1"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="王大锤" />
+
+        <ImageView
+            android:id="@+id/ivPhoneClear"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@id/etFamilyPhone"
+            android:layout_alignBottom="@id/etFamilyPhone"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_clear"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignStart="@id/etFamilyPhone"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray_cutting_line" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24.5dp"
+        android:text="@string/sel_group"
+        android:textColor="@color/gray_level1"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/rlFamilyPhoneNum"
+        app:layout_constraintTop_toBottomOf="@id/rlFamilyPhoneNum" />
+
+
+    <Button
+        android:id="@+id/btnFamilyOpenClose"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        android:drawableEnd="@drawable/family_icon_arrow_down"
+        android:text="@string/open_more"
+        android:textColor="@color/gray_level2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlFamilyPhoneNum" />
+
+    <TextView
+        android:id="@+id/btnFamilyComplete"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/sel_green_round25"
+        android:enabled="false"
+        android:text="@string/complete"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btnFamilyComplete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnFamilyOpenClose">
+
+        <com.donkingliang.labels.LabelsView
+            android:id="@+id/labelsFamily"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lv_labelBackground="@drawable/family_sel_label_bg"
+            app:lv_labelTextColor="@color/family_sel_label_text_color"
+            app:lv_labelTextPaddingBottom="6dp"
+            app:lv_labelTextPaddingLeft="16dp"
+            app:lv_labelTextPaddingRight="16dp"
+            app:lv_labelTextPaddingTop="6dp"
+            app:lv_labelTextSize="12sp"
+            app:lv_lineMargin="10dp"
+            app:lv_maxLines="1"
+            app:lv_maxSelect="2"
+            app:lv_selectType="MULTI"
+            app:lv_wordMargin="10dp" />
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

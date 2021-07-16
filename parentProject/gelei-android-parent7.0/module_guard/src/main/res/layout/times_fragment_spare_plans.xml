@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlTimesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/spare_plan"/>
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color"
+        app:srl_target_id="@id/rvTimeSparePlans">
+
+        <com.android.base.widget.SimpleMultiStateView
+            style="@style/SimpleMultiStateView_Default">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvTimeSparePlans"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+
+                <Button
+                    android:id="@+id/btnTimeConfirm"
+                    style="@style/Style_Round_Green_Btn_Big_Longest"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:enabled="false"
+                    android:text="@string/sure"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </com.android.base.widget.SimpleMultiStateView>
+
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+
+</LinearLayout>

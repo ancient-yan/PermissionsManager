@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/ivAppsAddAppDivider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/gray_separate"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemAddAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingEnd="@dimen/common_edge"
+        android:paddingStart="@dimen/common_edge"
+        android:paddingTop="15dp"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppsAddAppDivider"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemAddApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingEnd="@dimen/common_edge"
+        android:paddingStart="@dimen/common_edge"
+        android:paddingTop="15dp"
+        android:text="@string/add"
+        android:textColor="@color/green_main"
+        android:textSize="@dimen/text_normal"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvAppsItemAddAppTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAppsItemAddAppTitle"/>
+
+    <ImageView
+        android:id="@+id/tvAppsItemEmptyIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppsItemAddAppTitle"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/app_img_no_disabled"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemEmptyTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppsItemEmptyIcon"
+        tools:text="没有禁止使用应用喔"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemEmptyAdd"
+        style="@style/Style_Round_Green_Btn_Normal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppsItemEmptyTips"/>
+
+    <android.support.constraint.Group
+        android:id="@+id/groupAppsItemEmptyViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvAppsItemEmptyIcon,tvAppsItemEmptyTips"
+        tools:visibility="visible"/>
+
+    <android.support.constraint.Group
+        android:id="@+id/groupAppsItemAddingViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvAppsItemAddAppTitle,tvAppsItemAddApp"
+        tools:visibility="visible"/>
+
+</android.support.constraint.ConstraintLayout>

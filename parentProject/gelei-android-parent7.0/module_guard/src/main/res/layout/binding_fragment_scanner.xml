@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.android.base.widget.SimpleMultiStateView
+        style="@style/SimpleMultiStateView_Default"
+        app:msv_errorView="@layout/binding_bind_error">
+
+        <android.support.percent.PercentFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.android.sdk.qrcode.zxing.ZXingView
+                android:id="@+id/scannerZXingView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:qrcv_animTime="1000"
+                app:qrcv_borderColor="@color/green_main"
+                app:qrcv_borderSize="1dp"
+                app:qrcv_cornerColor="@color/green_main"
+                app:qrcv_cornerLength="20dp"
+                app:qrcv_cornerSize="4dp"
+                app:qrcv_isBarcode="false"
+                app:qrcv_isOnlyDecodeScanBoxArea="true"
+                app:qrcv_isScanLineReverse="true"
+                app:qrcv_isShowDefaultGridScanLineDrawable="false"
+                app:qrcv_isShowDefaultScanLineDrawable="true"
+                app:qrcv_isShowTipBackground="false"
+                app:qrcv_isShowTipTextAsSingleLine="true"
+                app:qrcv_isTipTextBelowRect="true"
+                app:qrcv_maskColor="#6604040F"
+                app:qrcv_qrCodeTipText="打开孩子端，扫描二维码"
+                app:qrcv_rectWidth_percent="0.7"
+                app:qrcv_scanLineColor="@color/green_main"
+                app:qrcv_scanLineMargin="0dp"
+                app:qrcv_scanLineSize="3dp"
+                app:qrcv_tipTextColor="@color/white"
+                app:qrcv_tipTextMargin="20dp"
+                app:qrcv_tipTextSize="14sp"
+                app:qrcv_topOffset="180dp"/>
+
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/scanTvErrorTips"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="130dp"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_widthPercent="65%"
+                app:stv_corner="6dp"
+                app:stv_solid="@color/opacity_60_black"
+                app:stv_stroke_color="@color/white"
+                app:stv_stroke_width="1dp"
+                tools:text="网络连接失败，请检查网络喔"
+                tools:visibility="visible"/>
+
+        </android.support.percent.PercentFrameLayout>
+
+    </com.android.base.widget.SimpleMultiStateView>
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:gtl_title="@string/scan_qrcode"/>
+
+</FrameLayout>

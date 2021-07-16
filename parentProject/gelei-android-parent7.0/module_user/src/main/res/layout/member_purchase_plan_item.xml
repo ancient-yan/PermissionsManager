@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="@dimen/common_edge"
+    android:layout_marginEnd="@dimen/common_edge"
+    android:background="@drawable/member_purchase_shape_plan_round_normal">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="15dp">
+
+        <TextView
+            android:id="@+id/tvPurchasePlanName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_level1"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="一个月" />
+
+        <TextView
+            android:id="@+id/tvPurchaseSpecialOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/member_shape_green_solid_round_7"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_smaller"
+            app:layout_constraintLeft_toRightOf="@id/tvPurchasePlanName"
+            app:layout_constraintTop_toTopOf="@id/tvPurchasePlanName"
+            app:layout_constraintBottom_toBottomOf="@id/tvPurchasePlanName"
+            tools:text="送2个月"/>
+
+        <TextView
+            android:id="@+id/tvPurchasePlanRemark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:singleLine="true"
+            android:textColor="@color/gray_level2"
+            android:textSize="@dimen/text_smaller"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPurchasePlanName"
+            tools:text="限今日前50名"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvPurchaseDiscountPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green_main"
+        android:textSize="@dimen/text_x_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ivPurchaseCornerMark"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="￥48" />
+
+    <TextView
+        android:id="@+id/tvPurchaseOriginPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/gray_level3"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvPurchaseDiscountPrice"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="￥48" />
+
+    <ImageView
+        android:id="@+id/ivPurchaseCornerMark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/member_icon_corner_mark"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
