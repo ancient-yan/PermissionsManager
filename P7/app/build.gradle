@@ -161,11 +161,9 @@ android {
 
     sourceSets {
         main {
-            if (!rootProject.isMultiApp) {
-                java.srcDirs += "src/app/java"
-                res.srcDirs += "src/app/res"
-                manifest.srcFile 'src/app/AndroidManifest.xml'
-            }
+            java.srcDirs += "src/app/java"
+            res.srcDirs += "src/app/res"
+            manifest.srcFile 'src/app/AndroidManifest.xml'
         }
     }
 
@@ -190,32 +188,22 @@ android {
 }
 
 dependencies {
+    testImplementation 'junit:junit:4.12'
 
-    if (!rootProject.isMultiApp) {
-
-        testImplementation 'junit:junit:4.12'
-
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-        //基础业务组件
-        implementation project(path: ':module_base')
-        //业务组件
-        implementation project(path: ':module_home')
-        implementation project(path: ':module_account')
-        implementation project(path: ':module_guard')
-        implementation project(path: ':module_user')
-        //第三方库
-        /*Dagger2*/
-        kapt thirdLibraries.dagger2Apt
-        kapt thirdLibraries.dagger2AndroidApt
-        /*ARouter*/
-        kapt thirdLibraries.arouterAnnotation
-
-    } else {
-
-        implementation androidLibraries.androidCompatV7
-        implementation androidLibraries.androidDesign
-
-    }
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //基础业务组件
+    implementation project(path: ':module_base')
+    //业务组件
+    implementation project(path: ':module_home')
+    implementation project(path: ':module_account')
+    implementation project(path: ':module_guard')
+    implementation project(path: ':module_user')
+    //第三方库
+    /*Dagger2*/
+    kapt thirdLibraries.dagger2Apt
+    kapt thirdLibraries.dagger2AndroidApt
+    /*ARouter*/
+    kapt thirdLibraries.arouterAnnotation
 }
 
 repositories {

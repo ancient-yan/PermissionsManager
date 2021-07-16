@@ -1,1 +1,1 @@
-apply from: '../modularization_config.gradle'
+apply from: '../modularization_lib.gradle'

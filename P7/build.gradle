@@ -48,8 +48,6 @@ allprojects {
 }
 
 ext {
-    isMultiApp = isModularization.toBoolean()
-
     minSdkVersion = androidMinSdkVersion.toInteger()
     targetSdkVersion = androidTargetSdkVersion.toInteger()
     compileSdkVersion = androidCompileSdkVersion.toInteger()
