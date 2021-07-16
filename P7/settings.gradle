@@ -1,11 +1,11 @@
 //通用类库
-include ':lib_base'
-include ':lib_cache'
-include ':lib_media_selector'
-include ':lib_qrcode'
-include ':lib_network'
-include ':lib_push'
-include ':lib_social'
+include ':lib:lib_base'
+include ':lib:lib_cache'
+include ':lib:lib_media_selector'
+include ':lib:lib_qrcode'
+include ':lib:lib_network'
+include ':lib:lib_push'
+include ':lib:lib_social'
 
 //业务基础架构
 include ':module_base'

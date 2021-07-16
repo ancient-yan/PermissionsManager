@@ -73,13 +73,13 @@ dependencies {
     testImplementation testLibraries.junit
 
     //基础组件库
-    api project(':lib_base')//基础类库
-    api project(':lib_network')//基础网络库
-    api project(':lib_media_selector')//媒体选择器
-    api project(':lib_qrcode')//二维码
-    api project(':lib_cache')//缓存库
-    api project(':lib_social')//第三方登录、分享、支付
-    implementation project(':lib_push')//推送
+    api project(':lib:lib_base')//基础类库
+    api project(':lib:lib_network')//基础网络库
+    api project(':lib:lib_media_selector')//媒体选择器
+    api project(':lib:lib_qrcode')//二维码
+    api project(':lib:lib_cache')//缓存库
+    api project(':lib:lib_social')//第三方登录、分享、支付
+    implementation project(':lib:lib_push')//推送
 
     //Android
     api androidLibraries.androidCard
