@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    tools:ignore="ResourceName">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clChildDeviceInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ResourceName">
+
+        <ImageView
+            android:id="@+id/tvDeviceItemDeviceIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_edge"
+            android:src="@drawable/icon_phone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvDeviceItemDeviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/gray_level1"
+            android:textSize="@dimen/text_big"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/tvDeviceItemDeviceIcon"
+            app:layout_constraintTop_toTopOf="@id/tvDeviceItemDeviceIcon"
+            tools:text="华为nova3i" />
+
+        <TextView
+            android:id="@+id/tvDeviceItemDeviceStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintLeft_toLeftOf="@id/tvDeviceItemDeviceName"
+            app:layout_constraintTop_toBottomOf="@id/tvDeviceItemDeviceName"
+            tools:text="正常守护中"
+            android:visibility="visible"/>
+
+        <com.coorchice.library.SuperTextView
+            android:id="@+id/tvDeviceItemDeviceIndex"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="3dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_smaller"
+            android:text="1"
+            app:layout_constraintBottom_toBottomOf="@id/tvDeviceItemDeviceName"
+            app:layout_constraintLeft_toRightOf="@id/tvDeviceItemDeviceName"
+            app:layout_constraintTop_toTopOf="@id/tvDeviceItemDeviceName"
+            app:stv_corner="10dp"
+            app:stv_solid="@color/green_main" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/tvDeviceItemCuttingLine"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginTop="80dp"
+        android:background="@color/gray_cutting_line"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llChildDeviceItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivChildDeviceIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/icon_jiesuo_home"/>
+
+        <TextView
+            android:id="@+id/tvChildDeviceSwitchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/gray_level1"
+            android:textSize="11sp"
+            tools:text="临时可用"/>
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/sbChildDevice"
+            style="@style/Style_SwitchBtn"
+            android:layout_width="46dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="15dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvChildDeviceItemNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:textColor="@color/green_level1"
+        android:textSize="@dimen/text_small"
+        android:text="@string/guarding_normally"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlAppsSetFlowTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_title="@string/guard_apps"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.gwchina.sdk.base.widget.text.ClearableEditTextLayout
+                android:id="@+id/cetAppsGroupName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:background="@drawable/apps_shape_app_group_name_bg"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="@string/click_input_group_name"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:padding="14dp"
+                    android:textSize="@dimen/text_x_big"
+                    tools:ignore="UnusedAttribute" />
+
+            </com.gwchina.sdk.base.widget.text.ClearableEditTextLayout>
+
+            <TextView
+                android:id="@+id/tvAppsGroupManegeAppsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:text="@string/add_app_tp_group"
+                android:textColor="@color/gray_level1"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cetAppsGroupName" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvAppsGroupAppContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/tvAppsGroupManegeAppsTitle"
+                tools:targetApi="lollipop" />
+
+            <TextView
+                android:id="@+id/tvAppsAppUsableTimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:text="@string/app_usable_period"
+                android:textColor="@color/gray_level1"
+                android:textSize="@dimen/text_big"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvAppsGroupAppContent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/tvAppsAppUsableTimeTitle"
+                app:layout_constraintStart_toEndOf="@id/tvAppsAppUsableTimeTitle"
+                app:layout_constraintTop_toTopOf="@id/tvAppsAppUsableTimeTitle">
+
+                <include layout="@layout/state_indicator_layout" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAppsAppUsableTimeTitleDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:text="@string/app_usable_period_desc"
+                android:textColor="@color/gray_level2"
+                android:textSize="@dimen/text_small"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAppsAppUsableTimeTitle" />
+
+            <com.gwchina.parent.times.widget.TimeSegmentView
+                android:id="@+id/tsvAppsTimeTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvAppsAppUsableTimeTitleDesc" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/clAppsAppUsableDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:background="?selectableItemBackground"
+                app:layout_constraintTop_toBottomOf="@+id/tsvAppsTimeTable">
+
+                <TextView
+                    android:id="@+id/tvAppsAppUsableDurationTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/usable_duration_per_day"
+                    android:textColor="@color/gray_level1"
+                    android:textSize="@dimen/text_big"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAppsAppUsableDurationDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/group_usable_duration_desc"
+                    android:textColor="@color/gray_level2"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAppsAppUsableDurationTitle" />
+
+                <TextView
+                    android:id="@+id/tvAppsAppUsableDurationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/icon_arrow_right"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="@string/not_set"
+                    android:textColor="@color/gray_level2"
+                    android:textSize="@dimen/text_normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_dividing_width"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/gray_cutting_line"
+                    app:layout_constraintTop_toBottomOf="@id/tvAppsAppUsableDurationDesc" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnAppsAddGroupComplete"
+        style="@style/Style_Round_Green_Btn_Big_Longest"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:enabled="false"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+
+    <com.gwchina.sdk.base.widget.insets.StatusInsetsView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/device_managing"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvDeviceManaging"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

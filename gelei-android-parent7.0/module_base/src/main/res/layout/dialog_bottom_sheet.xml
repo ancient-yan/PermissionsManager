@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.layout.QMUILinearLayout
+    android:id="@+id/flLevelDialogFunctionsRoot"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    app:qmui_hideRadiusSide="bottom"
+    app:qmui_radius="10dp"
+    tools:ignore="ResourceName">
+
+    <TextView
+        android:id="@+id/tvDialogBottomSheetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_edge"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_small"
+        android:visibility="gone"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvDialogBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        tools:listitem="@layout/dialog_bottom_sheet_item"/>
+
+    <View
+        android:id="@+id/tvDialogBottomSheetActionDivider"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="#F3F3F3"/>
+
+    <TextView
+        android:id="@+id/tvDialogBottomSheetAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="@string/cancel_"
+        android:textColor="@color/gray_level2"/>
+
+</com.qmuiteam.qmui.layout.QMUILinearLayout>

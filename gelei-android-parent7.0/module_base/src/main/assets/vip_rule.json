@@ -1,0 +1,33 @@
+{
+    "status": 0,
+    "message": "success",
+    "data": {
+        "vip_rule": {
+            "home_time_enter": "1",
+            "home_time_enter_minimum_level": "会员",
+            "time_defend_available_time_enabled": "0",
+            "time_defend_available_time_enabled_minimum_level": "高级会员",
+            "time_backup_plan_enter": "1",
+            "time_backup_plan_enabled": "1",
+            "time_backup_plan_enabled_minimum_level": "高级会员",
+            "home_app_enter": "1",
+            "home_app_enter_minimum_level": "会员",
+            "app_forbidden_timelimit_count": 20,
+            "app_unlimited_minimum_level": "高级会员",
+            "home_family_enter": "1",
+            "home_family_enter_minimum_level": "会员",
+            "family_call_out_in_enabled": "0",
+            "family_call_out_in_enabled_minimum_level": "高级会员",
+            "home_net_enter": "1",
+            "home_net_enter_minimum_level": "高级会员",
+            "home_screenshot_enter": "0",
+            "home_screenshot_enter_minimum_level": "高级会员",
+            "home_mine_add_device_enabled": "1",
+            "home_mine_add_device_enabled_minimum_level": "高级会员",
+            "temp_use_enabled": "0",
+            "temp_use_enabled_minimum_level": "高级会员",
+            "temp_lock_enabled": "1",
+            "temp_lock_enabled_minimum_level": "高级会员"
+        }
+    }
+}

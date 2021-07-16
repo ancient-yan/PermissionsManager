@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlRecommendDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/app_detail"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivRecoSoftIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/common_edge"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"/>
+
+            <com.gwchina.sdk.base.widget.views.GwRatingBar
+                android:id="@+id/rbRecoRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/ivRecoSoftIcon"
+                app:layout_constraintLeft_toRightOf="@id/ivRecoSoftIcon"
+                app:rb_can_operation="false"
+                app:rb_star_count="10"
+                app:rb_star_margin="3dp"
+                app:rb_use_half_star="true"/>
+
+            <TextView
+                android:id="@+id/tvRecoScoring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/yellow_level1"
+                android:textSize="@dimen/text_small"
+                app:layout_constraintBottom_toBottomOf="@id/rbRecoRating"
+                app:layout_constraintTop_toTopOf="@id/rbRecoRating"
+                app:layout_constraintLeft_toRightOf="@id/rbRecoRating"/>
+
+            <TextView
+                android:id="@+id/tvRecoSoftName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="12dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:textColor="@color/gray_level1"
+                android:textSize="@dimen/text_big"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintLeft_toRightOf="@id/ivRecoSoftIcon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivRecoSoftIcon"
+                tools:text="快学语文-快速学会小学语文"/>
+
+            <TextView
+                android:id="@+id/tvRecoSoftPhrase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray_level1"
+                android:textSize="@dimen/text_x_big"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivRecoSoftIcon"
+                tools:text="“小学语文教辅不二之选小学语文教辅不二之选小学语文教辅不二之选小学语文教辅不二之选”"/>
+
+            <View
+                android:id="@+id/viewRecoCutting"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/gray_cutting_line"
+                app:layout_constraintTop_toBottomOf="@id/tvRecoSoftPhrase"/>
+
+            <TextView
+                android:id="@+id/tvRecoReasonTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="20dp"
+                android:text="@string/reason_of_recommendation"
+                android:textColor="@color/gray_level1"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewRecoCutting"/>
+
+            <TextView
+                android:id="@+id/tvRecoReasonOfRecommendation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/common_edge"
+                android:layout_marginStart="@dimen/common_edge"
+                android:layout_marginTop="15dp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/gray_level2"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRecoReasonTitle"
+                tools:text="洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点，洋葱数学可以快速帮助孩子掌握数学里面的难点，
+                洋葱数学可以快速帮助孩子掌握数学里面的难点"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnRecoInstall"
+        style="@style/Style_Round_Green_Btn_Big_Longest"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="15dp"
+        android:enabled="false"
+        android:text="@string/install_for_child"/>
+
+</LinearLayout>

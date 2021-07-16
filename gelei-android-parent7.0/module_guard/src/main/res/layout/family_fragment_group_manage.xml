@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gtlFamilyGroupManageBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvFamilyGroupManagetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/group_manage"
+        android:textColor="@color/gray_level1"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gtlFamilyGroupManageBack" />
+
+
+    <com.android.base.widget.SimpleMultiStateView
+        style="@style/SimpleMultiStateView_Default"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFamilyGroupManagetitle">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvFamilyGroupList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.android.base.widget.SimpleMultiStateView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fbFamilyGroupAdd"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="40dp"
+        android:scaleType="center"
+        android:src="@drawable/family_btn_add"
+        app:elevation="3dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="62dp" />
+
+</android.support.constraint.ConstraintLayout>

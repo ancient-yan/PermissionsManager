@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--5.0 界面调整，共享元素-->
+    <string name="transition_photo" translatable="false">transition_animation_photos</string>
+
+    <!--common id-->
+    <item name="common_container_id" type="id"/><!--Fragment的容器布局-->
+    <item name="common_item_id" type="id"/><!--列表视图中的 item id（某些情况下需要用到）-->
+
+    <!--common enter length limit-->
+    <integer name="validate_code_length">6</integer>
+    <integer name="cellphone_number_length">11</integer>
+    <integer name="password_length">16</integer>
+    <integer name="child_name_length">15</integer>
+    <integer name="nickname_length">15</integer>
+    <integer name="app_group_name_length">15</integer>
+
+    <!--下拉刷新通用颜色-->
+    <array name="gw_swipe_refresh_color">
+        <item>@color/green_main</item>
+        <item>@color/opacity_80_green_main</item>
+    </array>
+
+</resources>

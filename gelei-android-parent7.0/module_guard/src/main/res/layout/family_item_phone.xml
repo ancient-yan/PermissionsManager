@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_height="75dp">
+
+
+    <TextView
+        android:id="@+id/tvFamilyIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/family_shape_blue_fillet_bg"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="田" />
+
+
+    <TextView
+        android:id="@+id/tvFamilyName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="2dp"
+        android:textColor="@color/gray_level1"
+        android:textSize="16sp"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@id/tvFamilyPhone"
+        app:layout_constraintStart_toEndOf="@id/tvFamilyIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="ArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnoldArnold" />
+
+
+    <TextView
+        android:id="@+id/tvFamilyPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_level2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvFamilyName"
+        app:layout_constraintTop_toBottomOf="@id/tvFamilyName"
+        tools:text="Arnold" />
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray_level4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvFamilyName" />
+
+</android.support.constraint.ConstraintLayout>

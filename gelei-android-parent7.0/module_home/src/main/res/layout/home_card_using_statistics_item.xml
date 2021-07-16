@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <ImageView
+        android:id="@+id/tvHomeUsingStatisticsIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="11dp"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/home_icon_time_statistics"/>
+
+    <TextView
+        android:id="@+id/tvHomeUsingStatisticsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="12dp"
+        android:textSize="@dimen/text_normal"
+        tools:text="今日已用"/>
+
+    <TextView
+        android:id="@+id/tvHomeUsingStatisticsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="@dimen/text_normal"
+        tools:text="1小时10分钟"/>
+
+</merge>

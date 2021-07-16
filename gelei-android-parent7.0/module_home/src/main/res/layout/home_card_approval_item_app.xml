@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="ContentDescription">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/ivHomeAuditsAppIcon"
+        android:layout_width="@dimen/home_app_icon_size"
+        android:layout_height="@dimen/home_app_icon_size"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/home_app_icon_round"/>
+
+    <TextView
+        android:id="@+id/tvHomeItemAllow"
+        style="@style/Style_Round_Green_Btn_Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/allow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvHomeItemProhibit"
+        style="@style/Style_Round_Red_Btn_Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:text="@string/prohibit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvHomeItemAllow"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvHomeApprovalAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:includeFontPadding="false"
+        android:lines="1"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintLeft_toRightOf="@id/ivHomeAuditsAppIcon"
+        app:layout_constraintTop_toTopOf="@id/ivHomeAuditsAppIcon"
+        tools:text="快手影音"/>
+
+    <TextView
+        android:id="@+id/tvHomeApprovalAppCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toBottomOf="@id/ivHomeAuditsAppIcon"
+        app:layout_constraintLeft_toRightOf="@id/ivHomeAuditsAppIcon"
+        tools:text="摄影"/>
+
+</android.support.constraint.ConstraintLayout>

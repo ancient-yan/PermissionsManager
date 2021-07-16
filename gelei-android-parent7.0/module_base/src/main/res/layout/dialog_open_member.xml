@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_solid_round10">
+
+    <ImageView
+        android:id="@+id/ivDialogMemberClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="17dp"
+        android:src="@drawable/icon_close"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:id="@+id/ivDialogMemberTopImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icon_member_window"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/tvDialogMemberFunctionsDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_big"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDialogMemberTopImg"
+        tools:text="守护多设备是会员专享功能喔"/>
+
+    <TextView
+        android:id="@+id/tvDialogMemberFunctionsDescSub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDialogMemberFunctionsDesc"
+        tools:text="最多可同时守护3个孩子X3台设备。最多可同时守护3个孩子X3台设备。最多可同时守护3个孩子X3台设备。最多可同时守护3个孩子X3台设备。最多可同时守护3个孩子X3台设备。"/>
+
+    <Button
+        android:id="@+id/btnDialogMemberOpen"
+        style="@style/Style_Round_Green_Btn_Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:text="@string/open_vip_to_experience"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDialogMemberFunctionsDescSub"/>
+
+</android.support.constraint.ConstraintLayout>

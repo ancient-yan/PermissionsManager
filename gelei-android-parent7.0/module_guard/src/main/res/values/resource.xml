@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="guard_app_icon_size">40dp</dimen>
+
+    <style name="Guard_Style_AppUsedTimeProgress" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/layer_green_progress</item>
+        <item name="android:layout_height">6dp</item>
+        <item name="android:max">@integer/guard_max_usable_time_second</item>
+    </style>
+
+    <integer name="guard_max_usable_time_second">86400</integer>
+
+    <style name="NetGuardTheme" parent="AppTheme.NoActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+</resources>

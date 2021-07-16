@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvAppsItemAddGroupGreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/limited_time_group"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemAddGroupGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingEnd="@dimen/common_edge"
+        android:paddingStart="@dimen/common_edge"
+        android:paddingTop="15dp"
+        android:text="@string/add"
+        android:textColor="@color/green_main"
+        android:textSize="@dimen/text_normal"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvAppsItemAddGroupGreenTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAppsItemAddGroupGreenTitle"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.gwchina.lssw.parent.home"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name="com.gwchina.parent.main.HomeAppContext"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="首页模块"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:replace="android:theme,android:label,android:allowBackup">
+
+        <!--main调试界面-->
+        <activity
+            android:name="com.gwchina.parent.main.HomeDebugActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--调试工具-->
+        <activity
+            android:name="com.gwchina.sdk.debug.DebugActivity"
+            android:label="调试工具"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <!--启动页-->
+        <activity
+            android:name="com.gwchina.parent.launcher.LauncherActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Launcher" />
+
+        <activity
+            android:name="com.gwchina.parent.launcher.GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.FullScreen" />
+
+        <!--主界面-->
+        <activity
+            android:name="com.gwchina.parent.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <!--写日记-->
+        <activity
+            android:name="com.gwchina.parent.daily.DailyActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <!--应用推荐-->
+        <activity
+            android:name="com.gwchina.parent.recommend.RecommendActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="unspecified" />
+
+    </application>
+
+</manifest>

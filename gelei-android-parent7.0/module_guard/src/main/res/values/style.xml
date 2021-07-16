@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="SimpleMultiStateView_net_guard_delete" parent="SimpleMultiStateView_Default">
+        <item name="msv_emptyText">""</item>
+        <item name="msv_emptyView">@layout/app_base_layout_empty</item>
+        <item name="msv_emptyImg">@drawable/shape_white_solid_round5</item>
+    </style>
+
+    <style name="SimpleMultiStateView_family_num" parent="SimpleMultiStateView_Default">
+        <item name="msv_emptyView">@layout/family_open_num_layout</item>
+        <item name="msv_state_processor">com.gwchina.parent.family.widget.FamilyStateActionProcessor</item>
+    </style>
+
+
+</resources>

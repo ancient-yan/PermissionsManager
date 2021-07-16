@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvWeekMonth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/gray_level1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="2019年7月"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/mine_weekly_item_bg">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivWeekChildHead"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/img_default_avatar"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@color/red"/>
+
+        <TextView
+            android:id="@+id/tvWeekClid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/gray_level1"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivWeekChildHead"
+            app:layout_constraintLeft_toRightOf="@id/ivWeekChildHead"
+            app:layout_constraintTop_toTopOf="@id/ivWeekChildHead"
+            tools:text="超长的名字超长"/>
+
+        <TextView
+            android:id="@+id/tvWeekDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/common_edge"
+            android:textColor="@color/gray_level2"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivWeekChildHead"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivWeekChildHead"
+            tools:text="07.10-07.17"/>
+
+        <ImageView
+            android:id="@+id/ivWeekLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/mine_weekly_left_icom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivWeekChildHead"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:id="@+id/tvWeekSummary"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/gray_level1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/ivWeekLeft"
+            app:layout_constraintTop_toTopOf="@id/ivWeekLeft"
+            tools:text="本周使用时长过长哦佛挡杀佛递四方速递东方时代奋斗啥方式"/>
+
+        <ImageView
+            android:id="@+id/ivWeekRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mine_weekly_right_icon"
+            app:layout_constraintBottom_toBottomOf="@id/tvWeekSummary"
+            app:layout_constraintLeft_toRightOf="@id/tvWeekSummary"
+            tools:ignore="ContentDescription"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/net_guard_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textSize="@dimen/text_smaller"
+        android:textColor="@color/green_level1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/net_tv_website"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="6dp"
+        android:layout_marginEnd="19dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/gray_level1"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/net_guard_mode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/net_tv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="18dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/green_level1"
+        android:textSize="@dimen/text_smaller"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/net_tv_website"
+        app:layout_constraintTop_toBottomOf="@id/net_tv_website"/>
+
+    <TextView
+        android:id="@+id/net_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_smaller"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/net_tv_website"
+        app:layout_constraintStart_toEndOf="@id/net_tv_label" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/gray_level4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

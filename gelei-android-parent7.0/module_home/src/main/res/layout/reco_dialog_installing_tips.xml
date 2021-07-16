@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/common_edge_big"
+    android:paddingStart="@dimen/common_edge_big">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:text="@string/installing_recommend_for_child_wifi_tips"
+        android:textColor="@color/gray_level1"/>
+
+    <CheckBox
+        android:id="@+id/cbRecoNoTipsAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:checked="true"
+        android:text="@string/do_not_tips_again"/>
+
+</LinearLayout>

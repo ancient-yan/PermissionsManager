@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/approval_record"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_edge"
+        android:paddingBottom="17dp"
+        android:paddingTop="17dp"
+        android:text="@string/show_last_7_days_record"/>
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color"
+        app:srl_target_id="@id/rvAppsRecords">
+
+        <com.android.base.widget.SimpleMultiStateView
+            style="@style/SimpleMultiStateView_Default"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvAppsRecords"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.android.base.widget.SimpleMultiStateView>
+
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+
+</LinearLayout>

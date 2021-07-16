@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/sel_selectable_item_white_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="15dp"
+    android:paddingEnd="@dimen/common_edge"
+    android:paddingStart="@dimen/common_edge"
+    android:paddingTop="15dp"
+    tools:ignore="ResourceName">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_phone"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/tvDialogMemberDeviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_big"
+        tools:text="华为nova3i"/>
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/tvDialogMemberDeviceIndex"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="3dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_smaller"
+        app:stv_corner="10dp"
+        app:stv_solid="@color/green_main"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:id="@+id/ivDialogMemberCheckStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sel_tick_choice"
+        tools:ignore="ContentDescription"/>
+
+</LinearLayout>

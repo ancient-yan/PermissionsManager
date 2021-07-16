@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.base.widget.SimpleMultiStateView style="@style/SimpleMultiStateView_Default"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.gwchina.sdk.base.widget.GwTitleLayout
+            android:id="@+id/levelGwTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:gtl_title="@string/select_guard_level"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:minHeight="?actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            tools:ignore="PrivateResource,UnusedAttribute"/>
+
+        <View
+            android:id="@+id/vCuttingLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_cutting_line"
+            app:layout_constraintTop_toBottomOf="@id/levelGwTitle" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/levelSvContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:descendantFocusability="blocksDescendants"
+            android:fillViewport="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@id/levelBtnConfirm"
+            app:layout_constraintTop_toBottomOf="@id/vCuttingLine"
+            app:layout_constraintVertical_weight="1">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/levelClLevelContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/levelTvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/common_edge_big"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/select_guard_level"
+                    android:textColor="@color/gray_level1"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.widget.Space
+                    android:id="@+id/space"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="1px"
+                    android:background="@android:color/holo_blue_bright"
+                    app:layout_constraintBottom_toBottomOf="@+id/levelLgv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundLinearLayout
+                    android:id="@+id/levelClFunctions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/common_edge"
+                    android:layout_marginStart="@dimen/common_edge"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/space"
+                    app:qmui_backgroundColor="@color/gray_separate"
+                    app:qmui_radius="12dp">
+
+                    <com.coorchice.library.SuperTextView
+                        android:id="@+id/levelTvApplicableAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="31dp"
+                        android:paddingBottom="2dp"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="2dp"
+                        android:text="@string/applicable_age"
+                        android:textColor="@color/white"
+                        app:stv_corner="12dp"
+                        app:stv_solid="@color/yellow_level1" />
+
+                    <TextView
+                        android:id="@+id/levelTvApplicableAgeDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="17dp"
+                        android:lineSpacingExtra="5dp"
+                        tools:text="16岁（含）以上孩子，随着身体的迅速发育，自我意识的增强，拥有独立思考和处理事物的能力，心理和行为上表现出强烈的自主性，迫切希望从父母的束缚中解放出来。建议采取轻管控方式，了解基本情况即可。" />
+
+                    <View
+                        android:id="@+id/vLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="@dimen/common_edge"
+                        android:layout_marginStart="@dimen/common_edge"
+                        android:layout_marginTop="31dp"
+                        android:background="@color/gray_cutting_line" />
+
+                    <com.coorchice.library.SuperTextView
+                        android:id="@+id/levelMvEnableFunctionsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="29dp"
+                        android:paddingBottom="2dp"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="2dp"
+                        android:text="@string/use_functions_colon"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_normal"
+                        app:stv_corner="12dp"
+                        app:stv_solid="@color/green_main" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/levelRvFunctions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="17dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                </com.qmuiteam.qmui.widget.roundwidget.QMUIRoundLinearLayout>
+
+                <com.gwchina.parent.level.widget.LevelGroupView
+                    android:id="@+id/levelLgv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/levelTvTitle" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <com.gwchina.parent.level.widget.LevelGroupView
+            android:id="@+id/levelLgvFloat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/vCuttingLine"
+            tools:visibility="gone" />
+
+        <View
+            android:id="@+id/levelVFloatMask"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginEnd="@dimen/common_edge"
+            android:layout_marginStart="@dimen/common_edge"
+            android:background="@color/gray_separate"
+            app:layout_constraintTop_toBottomOf="@id/levelLgvFloat" />
+
+        <Button
+            android:id="@+id/levelBtnConfirm"
+            style="@style/Style_Round_Green_Btn_Big_Longest"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:text="@string/sure"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</com.android.base.widget.SimpleMultiStateView>

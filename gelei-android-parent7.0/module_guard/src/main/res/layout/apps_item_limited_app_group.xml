@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:paddingTop="10dp">
+
+    <com.gwchina.parent.apps.widget.AppGroupIconLayout
+        android:id="@+id/ivAppsItemGroupIcon"
+        android:layout_width="@dimen/guard_app_icon_size"
+        android:layout_height="@dimen/guard_app_icon_size"
+        android:layout_marginStart="@dimen/common_edge"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemGroupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintLeft_toRightOf="@id/ivAppsItemGroupIcon"
+        app:layout_constraintTop_toTopOf="@id/ivAppsItemGroupIcon"
+        tools:text="格雷-孩子端"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemGroupDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:layout_marginStart="6dp"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:textColor="@color/gray_level3"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toBottomOf="@id/tvAppsItemGroupName"
+        app:layout_constraintLeft_toRightOf="@id/tvAppsItemGroupName"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="第五人格、绝地求生、刺激战场等5个应用"/>
+
+    <TextView
+        android:id="@+id/tvAppsItemGroupUsableTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toBottomOf="@id/ivAppsItemGroupIcon"
+        app:layout_constraintLeft_toLeftOf="@id/tvAppsItemGroupName"
+        tools:text="可用1小时/天，已用15分钟"/>
+
+    <ImageView
+        android:id="@+id/ivAppsItemArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:gravity="center"
+        android:src="@drawable/icon_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/ivAppsItemGroupIcon"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ivAppsItemGroupIcon"
+        tools:ignore="ContentDescription"/>
+
+    <ProgressBar
+        android:id="@+id/ivAppsItemGroupTimeProgress"
+        style="@style/Guard_Style_AppUsedTimeProgress"
+        android:layout_width="0dp"
+        android:layout_marginEnd="@dimen/common_edge_big"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/tvAppsItemGroupName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppsItemGroupIcon"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_marginStart="@dimen/common_edge"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray_cutting_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppsItemGroupTimeProgress"/>
+
+</android.support.constraint.ConstraintLayout>

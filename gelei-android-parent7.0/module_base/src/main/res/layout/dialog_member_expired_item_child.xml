@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingEnd="@dimen/common_edge"
+    android:paddingStart="@dimen/common_edge"
+    tools:ignore="ResourceName">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivDialogMemberItemChildAvatar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/img_head_girl_38"/>
+
+    <TextView
+        android:id="@+id/tvDialogMemberItemChildName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="8dp"
+        android:ellipsize="middle"
+        android:gravity="start"
+        android:singleLine="true"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/ivDialogMemberItemChildAvatar"
+        app:layout_constraintLeft_toRightOf="@id/ivDialogMemberItemChildAvatar"
+        app:layout_constraintTop_toTopOf="@id/ivDialogMemberItemChildAvatar"
+        tools:text="大孩子的设备"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:background="@color/gray_cutting_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

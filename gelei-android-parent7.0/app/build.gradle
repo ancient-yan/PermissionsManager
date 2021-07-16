@@ -1,0 +1,223 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+if (!isOpenDebug.toBoolean()) {
+    apply from: 'plugin.gradle'
+}
+apply from: "upload_apk.gradle"
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+androidExtensions {
+    experimental = true
+}
+
+def manifestPlaceholdersValue = [
+        //极光推送（格雷盒子账号）
+        JPUSH_PKGNAME      : "com.gwchina.lssw.parent",
+        JPUSH_APPKEY       : "49c1e5b81bae9f734f587214",
+        JPUSH_CHANNEL      : "developer-default",
+        //高德地图（格雷盒子账号）
+        AMAP_KEY           : "969ce7c8a33f6e1e119195229c8dd060",
+        //友盟
+        UMENG_CHANNEL_VALUE: "DEVELOPER"
+]
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    signingConfigs {
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+            keyAlias releaseKeyAlias
+            keyPassword releaseKeyPassword
+            storeFile rootProject.file(releaseKeyFileName)
+            storePassword releaseKeyPassword
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.gwchina.lssw.parent"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionName
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        resConfigs "zh", "en"//只需要中文和英文资源
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+    }
+
+    testOptions { unitTests.returnDefaultValues = true }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    flavorDimensions "default-flavorDimensions"
+
+    productFlavors {
+//        huawei {
+//            //极光推送配置
+//            manifestPlaceholders = manifestPlaceholdersValue
+//            resValue("string", "app_name", "格雷盒子家长")
+//            dimension "default-flavorDimensions"
+//        }
+//        xiaomi {
+//            //极光推送配置
+//            manifestPlaceholders = manifestPlaceholdersValue
+//            resValue("string", "app_name", "格雷盒子家长")
+//            dimension "default-flavorDimensions"
+//        }
+//        qihoo {
+//            //极光推送配置
+//            manifestPlaceholders = manifestPlaceholdersValue
+//            resValue("string", "app_name", "格雷盒子家长")
+//            dimension "default-flavorDimensions"
+//        }
+/*
+        // 开发环境
+        flavors_dev {
+            applicationIdSuffix '.dev'
+            //极光推送配置
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME: "com.gwchina.lssw.parent.dev",
+                    JPUSH_APPKEY : "0b30a726641732053681892f",
+                    JPUSH_CHANNEL: "developer-default",
+                    AMAP_KEY     : "93b3e40beea26ae45446083b53d7f66e"
+            ]
+            resValue("string", "app_name", "格雷盒子家长(开发)")
+            dimension "default-flavorDimensions"
+        }
+
+        //测试环境
+        flavors_test {
+            applicationIdSuffix '.debug'
+            //极光推送配置
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME: "com.gwchina.lssw.parent.debug",
+                    JPUSH_APPKEY : "9687efb7dcb74b344612245f",
+                    JPUSH_CHANNEL: "developer-default",
+                    AMAP_KEY     : "ccc3900f484314b873feea1e6cc35683"
+            ]
+            resValue("string", "app_name", "格雷盒子家长(测试)")
+            dimension "default-flavorDimensions"
+        }
+*/
+
+        // 线上环境
+        flavors_product {
+            //极光推送配置
+            manifestPlaceholders = manifestPlaceholdersValue
+            resValue("string", "app_name", "格雷盒子家长")
+            dimension "default-flavorDimensions"
+        }
+    }
+
+    buildTypes {
+        //测试
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [screenOrientation: "unspecified"]
+            ndk {
+                abiFilters 'armeabi-v7a', 'x86'
+            }
+        }
+
+        //正式发布
+        release {
+            zipAlignEnabled true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [screenOrientation: "portrait"]
+            ndk {
+                abiFilters 'armeabi-v7a'
+            }
+        }
+
+    }
+
+    sourceSets {
+        main {
+            if (!rootProject.isMultiApp) {
+                java.srcDirs += "src/app/java"
+                res.srcDirs += "src/app/res"
+                manifest.srcFile 'src/app/AndroidManifest.xml'
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    aaptOptions {
+        cruncherEnabled openCruncherEnabled.toBoolean()
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${project.name}-${variant.versionName}.apk"
+        }
+    }
+
+}
+
+dependencies {
+
+    if (!rootProject.isMultiApp) {
+
+        testImplementation 'junit:junit:4.12'
+
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        //基础业务组件
+        implementation project(path: ':module_base')
+        //业务组件
+        implementation project(path: ':module_home')
+        implementation project(path: ':module_account')
+        implementation project(path: ':module_guard')
+        implementation project(path: ':module_user')
+        //第三方库
+        /*Dagger2*/
+        kapt thirdLibraries.dagger2Apt
+        kapt thirdLibraries.dagger2AndroidApt
+        /*ARouter*/
+        kapt thirdLibraries.arouterAnnotation
+
+    } else {
+
+        implementation androidLibraries.androidCompatV7
+        implementation androidLibraries.androidDesign
+
+    }
+}
+
+repositories {
+    mavenCentral()
+}

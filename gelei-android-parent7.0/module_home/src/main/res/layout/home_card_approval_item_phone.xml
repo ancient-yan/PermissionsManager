@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/clHomePhoneApprovalItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/home_sel_approval_item_bg"
+    android:paddingBottom="20dp"
+    android:paddingEnd="15dp"
+    android:paddingStart="15dp"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:id="@+id/tvHomePhoneApproval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="“大孩子的大手机”申请将李莫愁(15868751258)加入亲情号码"/>
+
+    <TextView
+        android:id="@+id/tvHomePhoneApprovalReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHomePhoneApproval"
+        tools:text="申请理由：我和他经常一起去学校的，就是前段时间来"/>
+
+    <TextView
+        android:id="@+id/tvHomeItemAllowPhone"
+        style="@style/Style_Round_Green_Btn_Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/agree"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHomePhoneApprovalReason"/>
+
+    <TextView
+        android:id="@+id/tvHomeItemProhibitPhone"
+        style="@style/Style_Round_Red_Btn_Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_edge"
+        android:text="@string/refuse"
+        app:layout_constraintRight_toLeftOf="@id/tvHomeItemAllowPhone"
+        app:layout_constraintTop_toTopOf="@id/tvHomeItemAllowPhone"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.gwchina.sdk.base.widget.insets.StatusInsetsView
+        android:id="@+id/shvHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.gwchina.sdk.base.widget.GwTitleLayout
+        android:id="@+id/gwTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:gtl_show_cutting_line="true"
+        app:gtl_title="@string/home_using_record" />
+
+    <com.android.base.widget.ScrollChildSwipeRefreshLayout
+        android:id="@+id/base_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srl_color_scheme="@array/gw_swipe_refresh_color"
+        app:srl_target_id="@+id/recyclerView">
+
+        <com.android.base.widget.SimpleMultiStateView style="@style/SimpleMultiStateView_Default">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvDeviceName"
+                    android:layout_width="match_parent"
+                    android:drawableLeft="@drawable/icon_phone"
+                    android:drawablePadding="3dp"
+                    android:paddingStart="10dp"
+                    android:background="@color/gray_separate"
+                    android:textColor="@color/gray_level2"
+                    android:textSize="12sp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginEnd="11dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="12dp"
+                    tools:text="宇宙美少女的超级手机"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="11dp"
+                    android:paddingBottom="20dp"
+                    android:clipToPadding="false"
+                    android:paddingTop="21dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </com.android.base.widget.SimpleMultiStateView>
+    </com.android.base.widget.ScrollChildSwipeRefreshLayout>
+</LinearLayout>

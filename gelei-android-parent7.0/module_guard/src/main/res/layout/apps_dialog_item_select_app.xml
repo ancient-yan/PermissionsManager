@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:paddingBottom="10dp"
+    android:paddingEnd="20dp"
+    android:paddingStart="20dp"
+    android:paddingTop="10dp">
+
+    <ImageView
+        android:id="@+id/tvAppsDialogItemAppIcon"
+        android:layout_width="@dimen/guard_app_icon_size"
+        android:layout_height="@dimen/guard_app_icon_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/tvAppsDialogItemAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/gray_level1"
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toRightOf="@id/tvAppsDialogItemAppIcon"
+        app:layout_constraintRight_toLeftOf="@+id/tvAppsDialogItemCategory"
+        app:layout_constraintTop_toTopOf="@id/tvAppsDialogItemAppIcon"
+        tools:text="格雷-孩子端"/>
+
+    <TextView
+        android:id="@+id/tvAppsDialogItemCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"
+        android:paddingBottom="1dp"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:paddingTop="1dp"
+        android:textSize="@dimen/text_smallest"
+        app:layout_constraintBottom_toBottomOf="@id/tvAppsDialogItemAppName"
+        app:layout_constraintLeft_toRightOf="@id/tvAppsDialogItemAppName"
+        app:layout_constraintTop_toTopOf="@id/tvAppsDialogItemAppName"
+        tools:text="限时可用"/>
+
+    <TextView
+        android:id="@+id/tvAppsDialogItemAppCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray_level2"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toBottomOf="@id/tvAppsDialogItemAppIcon"
+        app:layout_constraintLeft_toLeftOf="@id/tvAppsDialogItemAppName"
+        tools:text="教育"/>
+
+    <ImageView
+        android:id="@+id/ivAppsDialogItemChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="0dp"
+        android:paddingStart="5dp"
+        android:src="@drawable/sel_tick_choice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"/>
+
+</android.support.constraint.ConstraintLayout>

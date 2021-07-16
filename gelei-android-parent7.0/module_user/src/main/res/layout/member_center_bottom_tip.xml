@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="30dp"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_cutting_line" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/gray_level1"
+        android:text="例外说明" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/gray_level2"
+        android:text="1.孩子手机是iPhone则暂不支持亲情号码、应用精选和守护周报功能。\n2.远程截屏暂时仅支持小格雷定制机喔。" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/gray_level1"
+        android:text="风险提示" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/gray_level2"
+        android:text="1.孩子的iPhone描述文件被删除（暂不可防删除）会导致脱管，重新安装可恢复。" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="特权对比"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/gray_level1"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/ivDifference"
+        android:layout_width="match_parent"
+        android:src="@drawable/member_img_difference"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
